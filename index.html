@@ -7,6 +7,494 @@
   <meta name="description" content="TakeHold Media is a digital marketing agency helping local and growing businesses anchor their brand online — website design, SEO, social media, and branding." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+
+    /* ─── Global animation base ─────────────────────── */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1),
+                  transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    [data-reveal-delay="1"] { transition-delay: 0.1s; }
+    [data-reveal-delay="2"] { transition-delay: 0.2s; }
+    [data-reveal-delay="3"] { transition-delay: 0.3s; }
+    [data-reveal-delay="4"] { transition-delay: 0.4s; }
+    [data-reveal-delay="5"] { transition-delay: 0.5s; }
+    [data-reveal-delay="6"] { transition-delay: 0.6s; }
+
+    [data-reveal-left] {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1),
+                  transform 0.9s cubic-bezier(0.16,1,0.3,1);
+    }
+    [data-reveal-left].is-visible { opacity: 1; transform: translateX(0); }
+
+    [data-reveal-right] {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1),
+                  transform 0.9s cubic-bezier(0.16,1,0.3,1);
+    }
+    [data-reveal-right].is-visible { opacity: 1; transform: translateX(0); }
+
+    /* ─── Hero ──────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background: var(--offwhite);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 0 5rem;
+      position: relative;
+      overflow: hidden;
+      padding-top: 72px;
+    }
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom,
+          rgba(247,243,237,0.15) 0%,
+          rgba(247,243,237,0.85) 60%,
+          rgba(247,243,237,1) 100%),
+        url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&auto=format&fit=crop') center/cover no-repeat;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 5vw;
+    }
+    .hero-overline {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.3s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    .hero-overline::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero-h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(3.5rem, 9vw, 9rem);
+      font-weight: 700;
+      line-height: 0.9;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+    }
+    .hero-h1 .line {
+      display: block;
+      overflow: hidden;
+    }
+    .hero-h1 .line-inner {
+      display: block;
+      opacity: 0;
+      transform: translateY(105%);
+      animation: lineUp 1s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    .hero-h1 .line:nth-child(1) .line-inner { animation-delay: 0.2s; }
+    .hero-h1 .line:nth-child(2) .line-inner { animation-delay: 0.35s; }
+    .hero-h1 .line:nth-child(3) .line-inner { animation-delay: 0.5s; }
+    .hero-h1 em { color: var(--teal); font-style: italic; }
+
+    .hero-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.7s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 380px;
+      line-height: 1.8;
+    }
+    .hero-actions-v {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @keyframes lineUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── Ticker ─────────────────────────────────────── */
+    .ticker {
+      background: var(--navy);
+      border-top: 3px solid var(--gold);
+      padding: 1rem 0;
+      overflow: hidden;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 3rem;
+      white-space: nowrap;
+      animation: ticker-scroll 25s linear infinite;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    @keyframes ticker-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      flex-shrink: 0;
+    }
+    .ticker-item .ti { color: var(--gold); }
+
+    /* ─── Services ───────────────────────────────────── */
+    .svc-list {
+      border-top: 1px solid var(--taupe);
+    }
+    .svc-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr auto;
+      align-items: center;
+      gap: 3rem;
+      padding: 2.4rem 0;
+      border-bottom: 1px solid var(--taupe);
+      cursor: default;
+      transition: background 0.3s ease;
+      position: relative;
+    }
+    .svc-row::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 0; right: 0;
+      height: 0;
+      background: var(--teal);
+      opacity: 0.04;
+      transition: height 0.3s ease;
+    }
+    .svc-row:hover::after { height: 100%; }
+    .svc-row-num {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--light);
+      font-weight: 400;
+    }
+    .svc-row-name {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .svc-row-desc { font-size: 0.9rem; color: var(--mid); }
+    .svc-row-icon {
+      font-size: 1.6rem;
+      color: var(--teal);
+      text-align: right;
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .svc-row:hover .svc-row-icon { opacity: 1; transform: translateX(0); }
+
+    /* ─── Intro statement ────────────────────────────── */
+    .statement {
+      background: var(--navy);
+      padding: 7rem 0;
+      overflow: hidden;
+    }
+    .statement-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .statement h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+    }
+    .statement h2 em { color: var(--teal); font-style: italic; }
+    .statement-right { border-left: 1px solid rgba(255,255,255,0.1); padding-left: 4rem; }
+    .statement-right p { color: rgba(255,255,255,0.55); font-size: 1.05rem; line-height: 1.85; margin-bottom: 2rem; }
+
+    /* ─── Work card with overlay ─────────────────────── */
+    .work-big-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 520px;
+      margin-top: 3rem;
+      cursor: pointer;
+    }
+    .work-big-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+    .work-big-card:hover img { transform: scale(1.06); }
+    .work-big-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,31,58,0.9) 0%, rgba(13,31,58,0.2) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3rem;
+    }
+    .work-big-card-tags { margin-bottom: 1rem; display: flex; gap: 0.5rem; }
+    .work-big-card-tags .tag { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.8); }
+    .work-big-card-overlay h3 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .work-big-card-overlay p { color: rgba(255,255,255,0.65); margin-bottom: 1.5rem; }
+    .work-big-card-overlay .work-link { color: var(--teal); }
+
+    .work-small-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .work-small-card {
+      border-radius: 10px;
+      overflow: hidden;
+      height: 240px;
+      position: relative;
+      cursor: pointer;
+    }
+    .work-small-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: grayscale(30%);
+      transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), filter 0.4s;
+    }
+    .work-small-card:hover img { transform: scale(1.08); filter: grayscale(0%); }
+    .work-small-card-body {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,31,58,0.8) 0%, transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .work-small-card:hover .work-small-card-body { opacity: 1; }
+    .work-small-card-body h4 { color: var(--white); font-size: 0.95rem; }
+
+    /* ─── Steps horizontal ───────────────────────────── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 5rem;
+    }
+    .process-step {
+      padding: 3rem 3rem 3rem 0;
+      border-right: 1px solid var(--taupe);
+      padding-right: 3rem;
+    }
+    .process-step:first-child { padding-left: 0; }
+    .process-step:last-child { border-right: none; padding-right: 0; }
+    .process-step + .process-step { padding-left: 3rem; }
+    .p-num {
+      font-family: var(--font-serif);
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: var(--taupe);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+    .p-line {
+      width: 32px; height: 3px;
+      background: var(--teal);
+      margin-bottom: 1.5rem;
+    }
+    .process-step h3 { color: var(--navy); font-size: 1.4rem; margin-bottom: 0.8rem; }
+    .process-step p { font-size: 0.92rem; color: var(--mid); }
+
+    /* ─── Why section ────────────────────────────────── */
+    .why-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .why-left {
+      padding: 6rem 5rem 6rem 0;
+    }
+    .why-right {
+      padding: 6rem 0 6rem 5rem;
+      border-left: 1px solid var(--taupe);
+    }
+    .why-points { margin-top: 3rem; display: flex; flex-direction: column; gap: 0; }
+    .why-pt {
+      display: flex;
+      gap: 1.5rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--taupe);
+      transition: background 0.3s;
+    }
+    .why-pt:first-child { border-top: 1px solid var(--taupe); }
+    .why-pt-num {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--taupe);
+      font-weight: 700;
+      flex-shrink: 0;
+      width: 2rem;
+      padding-top: 2px;
+    }
+    .why-pt h4 { color: var(--navy); margin-bottom: 0.3rem; font-size: 1rem; }
+    .why-pt p { font-size: 0.88rem; }
+    .stats-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .stat-item {
+      padding: 1.8rem;
+      background: var(--offwhite);
+      border-radius: 10px;
+    }
+    .stat-item .n {
+      font-family: var(--font-serif);
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .stat-item .n em { color: var(--teal); font-style: normal; }
+    .stat-item .l { font-size: 0.75rem; color: var(--mid); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.3rem; }
+
+    /* ─── Testimonials ───────────────────────────────── */
+    .testi-strip {
+      background: var(--navy);
+      padding: 6rem 0;
+      overflow: hidden;
+    }
+    .testi-scroll {
+      display: flex;
+      gap: 2rem;
+      overflow-x: auto;
+      padding: 2rem 5vw;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+    }
+    .testi-scroll::-webkit-scrollbar { display: none; }
+    .testi-card-dark {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 2.5rem;
+      min-width: 360px;
+      flex-shrink: 0;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .testi-card-dark:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); }
+    .testi-card-dark .q {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .testi-card-dark .author-name { font-weight: 600; font-size: 0.88rem; color: var(--white); }
+    .testi-card-dark .author-role { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 0.2rem; }
+
+    /* ─── CTA final ──────────────────────────────────── */
+    .cta-final {
+      padding: 8rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-final-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, var(--white) 0%, var(--offwhite) 100%);
+    }
+    .cta-final-content { position: relative; z-index: 1; }
+    .cta-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .cta-eyebrow::before, .cta-eyebrow::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .cta-final h2 {
+      font-size: clamp(2.5rem, 6vw, 6rem);
+      color: var(--navy);
+      line-height: 0.95;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+    .cta-final h2 em { color: var(--teal); font-style: italic; }
+    .cta-final p { font-size: 1.1rem; color: var(--mid); max-width: 480px; margin: 0 auto 3rem; }
+    .cta-final-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── Responsive ─────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-h1 { font-size: clamp(3rem, 12vw, 6rem); }
+      .svc-row { grid-template-columns: 50px 1fr; }
+      .svc-row-desc, .svc-row-icon { display: none; }
+      .statement-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .statement-right { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 3rem; }
+      .work-small-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .process-step { border-right: none; border-bottom: 1px solid var(--taupe); padding: 2rem 0; }
+      .process-step:last-child { border-bottom: none; }
+      .why-layout { grid-template-columns: 1fr; }
+      .why-left { padding: 4rem 0 2rem; }
+      .why-right { padding: 2rem 0 4rem; border-left: none; border-top: 1px solid var(--taupe); }
+      .cta-final h2 { font-size: clamp(2rem, 10vw, 4rem); }
+    }
+  </style>
 </head>
 <body>
 
@@ -29,234 +517,267 @@
   </nav>
 
   <!-- ── Hero ── -->
-  <section class="hero-full">
-    <div class="hero-dots"></div>
-    <div class="hero-anchor-bg"><i class="ti ti-anchor"></i></div>
-    <div class="container hero-content">
-      <span class="eyebrow hero-eyebrow">Digital Marketing · Web · SEO · Branding</span>
-      <h1>Where brands<br><em>take hold.</em></h1>
-      <p class="hero-sub">TakeHold Media helps local and growing businesses build a real presence online — one that earns attention, builds trust, and actually converts.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary">Start the Conversation <i class="ti ti-arrow-right"></i></a>
-        <a href="work.html" class="btn btn-outline">See Our Work</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Services Bar ── -->
-  <section class="services-bar">
-    <div class="container">
-      <div class="services-bar-grid">
-        <div class="service-bar-item">
-          <i class="ti ti-layout-2"></i>
-          <h4>Website Design & Build</h4>
-          <p>Clean, fast, conversion-focused sites built from scratch — no templates.</p>
-        </div>
-        <div class="service-bar-item">
-          <i class="ti ti-search"></i>
-          <h4>SEO</h4>
-          <p>Get found by the right people at the right moment — locally and beyond.</p>
-        </div>
-        <div class="service-bar-item">
-          <i class="ti ti-brand-instagram"></i>
-          <h4>Social Media</h4>
-          <p>Content that builds community and keeps your brand front of mind.</p>
-        </div>
-        <div class="service-bar-item">
-          <i class="ti ti-palette"></i>
-          <h4>Branding</h4>
-          <p>Logo, voice, and identity that gives your business something to stand on.</p>
+  <section class="hero">
+    <div class="hero-bg-img"></div>
+    <div class="hero-content">
+      <div class="hero-overline">Digital Marketing Agency</div>
+      <h1 class="hero-h1">
+        <span class="line"><span class="line-inner">Where</span></span>
+        <span class="line"><span class="line-inner">brands <em>take</em></span></span>
+        <span class="line"><span class="line-inner"><em>hold.</em></span></span>
+      </h1>
+      <div class="hero-bottom">
+        <p class="hero-desc">We build websites, run SEO, manage social, and shape brands — for businesses serious about their digital presence.</p>
+        <div class="hero-actions-v">
+          <a href="contact.html" class="btn btn-primary">Start the Conversation <i class="ti ti-arrow-right"></i></a>
+          <a href="work.html" class="btn btn-outline">See Our Work</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── How We Work ── -->
-  <section class="section bg-offwhite">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">How It Works</span>
-        <h2>Simple process.<br>Real results.</h2>
-        <p>We don't believe in endless discovery calls or bloated proposals. We move fast, stay focused, and build things that work.</p>
-      </div>
-      <div class="steps-grid">
-        <div class="step">
-          <div class="step-num">01</div>
-          <div class="step-divider"></div>
-          <h3>We Listen</h3>
-          <p>One conversation to understand your business, your goals, and what's not working right now. No jargon, no sales pitch.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <div class="step-divider"></div>
-          <h3>We Build</h3>
-          <p>We design and build everything in-house — no outsourcing, no handoffs. You get a direct line to the people doing the work.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <div class="step-divider"></div>
-          <h3>We Hold</h3>
-          <p>Launch is the beginning, not the end. We stay on to manage, optimize, and grow what we built together.</p>
-        </div>
-      </div>
+  <!-- ── Ticker ── -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-item"><i class="ti ti-layout-2"></i> Website Design & Build</span>
+      <span class="ticker-item"><i class="ti ti-search"></i> Search Engine Optimization</span>
+      <span class="ticker-item"><i class="ti ti-brand-instagram"></i> Social Media</span>
+      <span class="ticker-item"><i class="ti ti-palette"></i> Brand Identity</span>
+      <span class="ticker-item"><i class="ti ti-chart-bar"></i> Conversion Optimization</span>
+      <span class="ticker-item"><i class="ti ti-map-pin"></i> Local SEO</span>
+      <span class="ticker-item"><i class="ti ti-anchor"></i> TakeHold Media</span>
+      <span class="ticker-item"><i class="ti ti-layout-2"></i> Website Design & Build</span>
+      <span class="ticker-item"><i class="ti ti-search"></i> Search Engine Optimization</span>
+      <span class="ticker-item"><i class="ti ti-brand-instagram"></i> Social Media</span>
+      <span class="ticker-item"><i class="ti ti-palette"></i> Brand Identity</span>
+      <span class="ticker-item"><i class="ti ti-chart-bar"></i> Conversion Optimization</span>
+      <span class="ticker-item"><i class="ti ti-map-pin"></i> Local SEO</span>
+      <span class="ticker-item"><i class="ti ti-anchor"></i> TakeHold Media</span>
     </div>
-  </section>
+  </div>
 
-  <!-- ── Featured Work ── -->
+  <!-- ── Services List ── -->
   <section class="section bg-white">
     <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Our Work</span>
-        <h2>Built to perform,<br>built to last.</h2>
-        <p>Every site we ship is designed around the client's goals — not our portfolio.</p>
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">What We Do</span>
+        <h2>Four ways to <em style="color:var(--teal); font-style:italic;">hold your ground.</em></h2>
       </div>
-      <div class="work-grid">
-        <div class="work-card">
-          <div class="work-card-img">
-            <img src="https://images.unsplash.com/photo-1524431144429-03fdd30eee26?w=800&auto=format&fit=crop" alt="Built by Rainier Custom Homes" loading="lazy" />
-          </div>
-          <div class="work-card-body">
-            <div class="work-card-tags">
-              <span class="tag">Web Design</span>
-              <span class="tag">SEO</span>
-              <span class="tag">Branding</span>
-            </div>
-            <h3>Built by Rainier Custom Homes</h3>
-            <p>A luxury custom home builder in Central Florida needed a site that matched the caliber of their work. We built it from scratch — fast, clean, and lead-ready.</p>
-            <a href="https://www.builtbyrainier.com" target="_blank" class="work-link">Visit Site <i class="ti ti-arrow-right"></i></a>
-          </div>
+      <div class="svc-list" style="margin-top:3rem;">
+        <div class="svc-row" data-reveal data-reveal-delay="1">
+          <span class="svc-row-num">01</span>
+          <span class="svc-row-name">Website Design & Build</span>
+          <span class="svc-row-desc">Custom-coded from scratch. Fast, beautiful, and built to convert.</span>
+          <a href="services.html#web" class="svc-row-icon"><i class="ti ti-arrow-up-right"></i></a>
         </div>
-        <div class="work-card" style="display:flex; align-items:center; justify-content:center; min-height:360px; border-style:dashed;">
-          <div style="text-align:center; padding:2rem;">
-            <i class="ti ti-plus" style="font-size:2rem; color:var(--light); display:block; margin-bottom:1rem;"></i>
-            <h3 style="margin-bottom:0.5rem;">Your Business Could Be Next</h3>
-            <p style="font-size:0.9rem; margin-bottom:1.5rem;">We take on a limited number of new clients each quarter.</p>
-            <a href="contact.html" class="btn btn-primary">Start a Project <i class="ti ti-arrow-right"></i></a>
-          </div>
+        <div class="svc-row" data-reveal data-reveal-delay="2">
+          <span class="svc-row-num">02</span>
+          <span class="svc-row-name">SEO</span>
+          <span class="svc-row-desc">Get found by the people looking for exactly what you offer.</span>
+          <a href="services.html#seo" class="svc-row-icon"><i class="ti ti-arrow-up-right"></i></a>
         </div>
-      </div>
-      <div style="text-align:center; margin-top:2.5rem;">
-        <a href="work.html" class="btn btn-navy">View All Work <i class="ti ti-arrow-right"></i></a>
+        <div class="svc-row" data-reveal data-reveal-delay="3">
+          <span class="svc-row-num">03</span>
+          <span class="svc-row-name">Social Media</span>
+          <span class="svc-row-desc">Content that builds community and keeps you front of mind.</span>
+          <a href="services.html#social" class="svc-row-icon"><i class="ti ti-arrow-up-right"></i></a>
+        </div>
+        <div class="svc-row" data-reveal data-reveal-delay="4">
+          <span class="svc-row-num">04</span>
+          <span class="svc-row-name">Branding</span>
+          <span class="svc-row-desc">Identity, voice, and positioning that gives you something solid to stand on.</span>
+          <a href="services.html#branding" class="svc-row-icon"><i class="ti ti-arrow-up-right"></i></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Why TakeHold ── -->
+  <!-- ── Statement ── -->
+  <section class="statement">
+    <div class="container">
+      <div class="statement-inner">
+        <div data-reveal-left>
+          <h2>We don't just build things.<br><em>We make them hold.</em></h2>
+        </div>
+        <div class="statement-right" data-reveal-right>
+          <p>Most agencies hand you a website and disappear. We stay in — managing, optimizing, and growing what we built until it's actually producing results. Launch is the beginning, not the finish line.</p>
+          <a href="about.html" style="color:var(--teal); font-weight:600; font-size:0.9rem; display:inline-flex; align-items:center; gap:0.5rem;">Our approach <i class="ti ti-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Work ── -->
+  <section class="section bg-white">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;" data-reveal>
+        <div class="section-header" style="max-width:none; margin:0;">
+          <span class="eyebrow">Featured Work</span>
+          <h2>Built to perform.</h2>
+        </div>
+        <a href="work.html" class="btn btn-outline">View All Work <i class="ti ti-arrow-right"></i></a>
+      </div>
+
+      <div class="work-big-card" data-reveal>
+        <img src="https://images.unsplash.com/photo-1524431144429-03fdd30eee26?w=1400&auto=format&fit=crop" alt="Built by Rainier Custom Homes" loading="lazy" />
+        <div class="work-big-card-overlay">
+          <div class="work-big-card-tags">
+            <span class="tag">Web Design</span>
+            <span class="tag">SEO</span>
+            <span class="tag">Branding</span>
+          </div>
+          <h3>Built by Rainier Custom Homes</h3>
+          <p>Luxury custom home builder · Central Florida · Built from scratch</p>
+          <a href="https://www.builtbyrainier.com" target="_blank" class="work-link">Visit Live Site <i class="ti ti-external-link"></i></a>
+        </div>
+      </div>
+
+      <div class="work-small-grid">
+        <div class="work-small-card" data-reveal data-reveal-delay="1">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop" alt="Coming soon" loading="lazy" />
+          <div class="work-small-card-body">
+            <h4>Your Project Here</h4>
+          </div>
+        </div>
+        <div class="work-small-card" data-reveal data-reveal-delay="2">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop" alt="Coming soon" loading="lazy" />
+          <div class="work-small-card-body">
+            <h4>Your Project Here</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Process ── -->
   <section class="section bg-offwhite">
     <div class="container">
-      <div class="why-grid">
-        <div>
-          <span class="eyebrow">Why TakeHold</span>
-          <h2>We work like a partner,<br>not a vendor.</h2>
-          <p>Most agencies disappear after launch. We stay in. Your growth is our benchmark — not your invoice.</p>
+      <div class="section-header center" data-reveal>
+        <span class="eyebrow">The Process</span>
+        <h2>Simple. Honest. Effective.</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step" data-reveal data-reveal-delay="1">
+          <div class="p-num">01</div>
+          <div class="p-line"></div>
+          <h3>We Listen</h3>
+          <p>One call. No jargon, no pitch. We want to understand your business, your goals, and where things are breaking down.</p>
+        </div>
+        <div class="process-step" data-reveal data-reveal-delay="2">
+          <div class="p-num">02</div>
+          <div class="p-line"></div>
+          <h3>We Build</h3>
+          <p>In-house, from scratch, every time. The people you talk to are the people doing the work — no middlemen, no outsourcing.</p>
+        </div>
+        <div class="process-step" data-reveal data-reveal-delay="3">
+          <div class="p-num">03</div>
+          <div class="p-line"></div>
+          <h3>We Hold</h3>
+          <p>We stay on after launch. Your success is our benchmark — not your invoice, not your contract end date.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Why ── -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="why-layout">
+        <div class="why-left">
+          <span class="eyebrow" data-reveal>Why TakeHold</span>
+          <h2 data-reveal data-reveal-delay="1">Partners,<br>not vendors.</h2>
+          <div class="stats-block" data-reveal data-reveal-delay="2">
+            <div class="stat-item">
+              <div class="n">XXXXX<em>+</em></div>
+              <div class="l">Sites Launched</div>
+            </div>
+            <div class="stat-item">
+              <div class="n">XXXXX<em>%</em></div>
+              <div class="l">Client Retention</div>
+            </div>
+            <div class="stat-item">
+              <div class="n">XXXXX</div>
+              <div class="l">Industries Served</div>
+            </div>
+            <div class="stat-item">
+              <div class="n">XXXXX</div>
+              <div class="l">Avg. Rank Lift</div>
+            </div>
+          </div>
+        </div>
+        <div class="why-right">
           <div class="why-points">
-            <div class="why-point">
-              <div class="why-icon"><i class="ti ti-tools"></i></div>
+            <div class="why-pt" data-reveal data-reveal-delay="1">
+              <div class="why-pt-num">01</div>
               <div>
                 <h4>Built from scratch, every time</h4>
-                <p>No templates. No page builders. Every site is hand-coded to load fast and convert.</p>
+                <p>No page builders. No templates. Every site is hand-coded for your specific goals.</p>
               </div>
             </div>
-            <div class="why-point">
-              <div class="why-icon"><i class="ti ti-eye"></i></div>
+            <div class="why-pt" data-reveal data-reveal-delay="2">
+              <div class="why-pt-num">02</div>
               <div>
-                <h4>You always know what's happening</h4>
-                <p>No black boxes. We show you what we're doing, why, and what it's producing.</p>
+                <h4>Full transparency, always</h4>
+                <p>No mystery metrics. You see exactly what we're doing, why, and what it's producing — every month.</p>
               </div>
             </div>
-            <div class="why-point">
-              <div class="why-icon"><i class="ti ti-map-pin"></i></div>
+            <div class="why-pt" data-reveal data-reveal-delay="3">
+              <div class="why-pt-num">03</div>
               <div>
-                <h4>Local-first thinking</h4>
-                <p>We specialize in businesses that need to win in their market — not just look good online.</p>
+                <h4>Local-first strategy</h4>
+                <p>We specialize in helping businesses win their local market before scaling out.</p>
               </div>
             </div>
-            <div class="why-point">
-              <div class="why-icon"><i class="ti ti-anchor"></i></div>
+            <div class="why-pt" data-reveal data-reveal-delay="4">
+              <div class="why-pt-num">04</div>
               <div>
                 <h4>We anchor, then we grow</h4>
-                <p>We build a stable foundation first — identity, site, positioning — then layer on growth.</p>
+                <p>Foundation first — identity, site, positioning. Then growth that compounds on something solid.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="why-visual">
-          <div class="why-visual-anchor"><i class="ti ti-anchor"></i></div>
-          <div class="stat-grid">
-            <div class="stat-item">
-              <div class="stat-num">XXXXX<span>+</span></div>
-              <div class="stat-label">Sites Launched</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">XXXXX<span>%</span></div>
-              <div class="stat-label">Client Retention</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">XXXXX<span>+</span></div>
-              <div class="stat-label">Industries Served</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">XXXXX</div>
-              <div class="stat-label">Avg. Rank Lift</div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Testimonials ── -->
-  <section class="section bg-white">
-    <div class="container">
-      <div class="section-header center">
-        <span class="eyebrow">Client Stories</span>
-        <h2>What our clients say</h2>
-        <p>We let the results speak — but a few kind words don't hurt.</p>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">"XXXXX — placeholder for client testimonial. Replace with a real quote from a happy client."</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar"></div>
-            <div>
-              <div class="testimonial-name">XXXXX Client Name</div>
-              <div class="testimonial-role">XXXXX Title · Company</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-quote">"XXXXX — placeholder for client testimonial. Replace with a real quote from a happy client."</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar"></div>
-            <div>
-              <div class="testimonial-name">XXXXX Client Name</div>
-              <div class="testimonial-role">XXXXX Title · Company</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-quote">"XXXXX — placeholder for client testimonial. Replace with a real quote from a happy client."</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar"></div>
-            <div>
-              <div class="testimonial-name">XXXXX Client Name</div>
-              <div class="testimonial-role">XXXXX Title · Company</div>
-            </div>
-          </div>
-        </div>
+  <!-- ── Testimonials dark strip ── -->
+  <div class="testi-strip">
+    <div class="container" data-reveal>
+      <div class="section-header center" style="margin-bottom:0;">
+        <span class="eyebrow" style="color:var(--gold);">Client Stories</span>
+        <h2 style="color:var(--white);">What clients say</h2>
       </div>
     </div>
-  </section>
+    <div class="testi-scroll" style="margin-top:3rem;">
+      <div class="testi-card-dark">
+        <div class="q">"XXXXX — Replace this with a real quote from a happy client. Something specific about what changed for their business."</div>
+        <div class="author-name">XXXXX Client Name</div>
+        <div class="author-role">XXXXX Title · Company</div>
+      </div>
+      <div class="testi-card-dark">
+        <div class="q">"XXXXX — Replace this with a real quote from a happy client. Something specific about what changed for their business."</div>
+        <div class="author-name">XXXXX Client Name</div>
+        <div class="author-role">XXXXX Title · Company</div>
+      </div>
+      <div class="testi-card-dark">
+        <div class="q">"XXXXX — Replace this with a real quote from a happy client. Something specific about what changed for their business."</div>
+        <div class="author-name">XXXXX Client Name</div>
+        <div class="author-role">XXXXX Title · Company</div>
+      </div>
+    </div>
+  </div>
 
-  <!-- ── CTA Strip ── -->
-  <section class="cta-strip">
-    <div class="cta-anchor-bg"><i class="ti ti-anchor"></i></div>
-    <div class="container" style="position:relative; z-index:1;">
-      <h2>Ready to take hold?</h2>
-      <p>Let's talk about what you're building and how we can help it stick.</p>
-      <div class="btn-actions">
-        <a href="contact.html" class="btn btn-primary">Start the Conversation <i class="ti ti-arrow-right"></i></a>
-        <a href="services.html" class="btn btn-outline-white">Explore Services</a>
+  <!-- ── Final CTA ── -->
+  <section class="cta-final">
+    <div class="cta-final-bg"></div>
+    <div class="cta-final-content container">
+      <div class="cta-eyebrow" data-reveal>Let's Work Together</div>
+      <h2 data-reveal data-reveal-delay="1">Ready to<br><em>take hold?</em></h2>
+      <p data-reveal data-reveal-delay="2">We take on a limited number of new clients each quarter. If you're serious about your digital presence, this is the time.</p>
+      <div class="cta-final-btns" data-reveal data-reveal-delay="3">
+        <a href="contact.html" class="btn btn-primary" style="padding:1rem 2.5rem; font-size:1rem;">Start the Conversation <i class="ti ti-arrow-right"></i></a>
+        <a href="services.html" class="btn btn-outline" style="padding:1rem 2.5rem; font-size:1rem;">Explore Services</a>
       </div>
     </div>
   </section>
@@ -305,10 +826,38 @@
   </footer>
 
   <script>
+    // Nav hamburger
     document.getElementById('hamburger').addEventListener('click', () => {
       const links = document.querySelector('.nav-links');
       links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
     });
+
+    // Scroll reveal — all [data-reveal*] elements
+    const revealEls = document.querySelectorAll('[data-reveal], [data-reveal-left], [data-reveal-right]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // Animated stat counters
+    function animateCounter(el, target, suffix = '') {
+      let start = 0;
+      const duration = 1800;
+      const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(ease * target) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
   </script>
 </body>
 </html>
