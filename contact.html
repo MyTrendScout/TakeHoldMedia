@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — TakeHold Media</title>
+  <meta name="description" content="Ready to build something? Get in touch with TakeHold Media — we'd love to learn about your business and how we can help." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="always-light" id="nav">
+    <a href="index.html" class="wordmark">
+      <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+      <span class="wordmark-line2">Media</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="contact.html" class="btn-nav">Get Started</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero-page">
+    <div class="hero-dots"></div>
+    <div class="hero-anchor-bg"><i class="ti ti-anchor"></i></div>
+    <div class="container hero-content">
+      <span class="eyebrow hero-eyebrow">Get in Touch</span>
+      <h1>Let's start the<br><em>conversation.</em></h1>
+      <p class="hero-sub">Tell us about your business and what you're trying to build. We'll get back to you within one business day.</p>
+    </div>
+  </section>
+
+  <!-- ── Contact Layout ── -->
+  <section class="section bg-white" id="form">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Left: Info -->
+        <div>
+          <h3>How it works</h3>
+          <p style="margin-bottom:2rem;">Fill out the form and we'll follow up to schedule a short intro call — usually 20–30 minutes. No commitment, no pressure. We'll tell you exactly what we'd tackle first and why.</p>
+
+          <div class="contact-detail">
+            <i class="ti ti-mail"></i>
+            <div>
+              <strong>Email us directly</strong>
+              <p><a href="mailto:hello@takeholdmedia.com" style="color:var(--teal);">hello@takeholdmedia.com</a></p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <i class="ti ti-phone"></i>
+            <div>
+              <strong>Call or text</strong>
+              <p><a href="tel:XXXXXXXXXX" style="color:var(--teal);">XXXXX</a></p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <i class="ti ti-clock"></i>
+            <div>
+              <strong>Response time</strong>
+              <p>We reply to all inquiries within one business day, usually faster.</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <i class="ti ti-map-pin"></i>
+            <div>
+              <strong>Where we work</strong>
+              <p>Remote-first. We serve clients across Florida and nationally.</p>
+            </div>
+          </div>
+
+          <div style="margin-top:3rem; background:var(--offwhite); border-radius:10px; padding:1.8rem; border-left:4px solid var(--gold);">
+            <h4 style="color:var(--navy); margin-bottom:0.5rem;">Limited availability</h4>
+            <p style="font-size:0.9rem;">We take on a limited number of new clients each quarter to make sure every project gets our full attention. If you're on the fence, now is a good time to reach out.</p>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact-form-panel">
+          <h3 style="color:var(--navy); margin-bottom:0.4rem;">Tell us about your project</h3>
+          <p style="font-size:0.88rem; margin-bottom:2rem;">Every field is optional — fill in what you can and we'll figure out the rest on the call.</p>
+
+          <form action="#" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" placeholder="John" />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" placeholder="Smith" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@yourbusiness.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
+            </div>
+
+            <div class="form-group">
+              <label for="business">Business Name</label>
+              <input type="text" id="business" name="business" placeholder="Your Business LLC" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">What are you looking for?</label>
+              <select id="service" name="service">
+                <option value="" disabled selected>Select a service</option>
+                <option value="web">Website Design & Build</option>
+                <option value="seo">SEO</option>
+                <option value="social">Social Media Management</option>
+                <option value="branding">Branding</option>
+                <option value="multiple">Multiple Services</option>
+                <option value="unsure">Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="budget">Approximate monthly budget</label>
+              <select id="budget" name="budget">
+                <option value="" disabled selected>Select a range</option>
+                <option value="under500">Under $500/mo</option>
+                <option value="500-1000">$500 – $1,000/mo</option>
+                <option value="1000-2500">$1,000 – $2,500/mo</option>
+                <option value="2500plus">$2,500+/mo</option>
+                <option value="project">One-time project</option>
+                <option value="unsure">Not sure</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell us about your business</label>
+              <textarea id="message" name="message" placeholder="What do you do, who do you serve, and what's the biggest challenge you're facing online?"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">
+              Send My Message <i class="ti ti-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="section bg-offwhite">
+    <div class="container">
+      <div class="section-header center">
+        <span class="eyebrow">FAQ</span>
+        <h2>Common questions</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:3rem; max-width:900px; margin-left:auto; margin-right:auto;">
+        <div style="background:var(--white); padding:1.8rem; border-radius:10px; border:1px solid var(--taupe);">
+          <h4 style="color:var(--navy); margin-bottom:0.5rem;">How long does a website take?</h4>
+          <p style="font-size:0.9rem;">Most websites take 3–6 weeks from kickoff to launch. Larger or more complex projects may take longer. We'll give you a clear timeline at the start.</p>
+        </div>
+        <div style="background:var(--white); padding:1.8rem; border-radius:10px; border:1px solid var(--taupe);">
+          <h4 style="color:var(--navy); margin-bottom:0.5rem;">Do you require long-term contracts?</h4>
+          <p style="font-size:0.9rem;">For ongoing services (SEO, social), we start with a 3-month minimum to allow time for results. After that, it's month-to-month. We earn your continued business.</p>
+        </div>
+        <div style="background:var(--white); padding:1.8rem; border-radius:10px; border:1px solid var(--taupe);">
+          <h4 style="color:var(--navy); margin-bottom:0.5rem;">Do you work with businesses outside Florida?</h4>
+          <p style="font-size:0.9rem;">Yes. We're remote-first and work with clients nationally. Florida is our home base, but geography doesn't limit what we can build together.</p>
+        </div>
+        <div style="background:var(--white); padding:1.8rem; border-radius:10px; border:1px solid var(--taupe);">
+          <h4 style="color:var(--navy); margin-bottom:0.5rem;">What industries do you work with?</h4>
+          <p style="font-size:0.9rem;">We work across industries — construction, real estate, professional services, hospitality, and more. If you serve customers and need a stronger online presence, we can help.</p>
+        </div>
+        <div style="background:var(--white); padding:1.8rem; border-radius:10px; border:1px solid var(--taupe);">
+          <h4 style="color:var(--navy); margin-bottom:0.5rem;">Can I just get a website without ongoing services?</h4>
+          <p style="font-size:0.9rem;">Absolutely. We build one-time projects all the time. We'll also give you a clear picture of what ongoing support would add, and you can decide if it makes sense.</p>
+        </div>
+        <div style="background:var(--white); padding:1.8rem; border-radius:10px; border:1px solid var(--taupe);">
+          <h4 style="color:var(--navy); margin-bottom:0.5rem;">How do I know SEO is actually working?</h4>
+          <p style="font-size:0.9rem;">We send monthly rank tracking reports with clear before/after comparisons. You'll see exactly which keywords moved and by how much — no mystery, no vague promises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="wordmark wordmark-white">
+            <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+            <span class="wordmark-line2">Media</span>
+          </a>
+          <p>Helping local and growing businesses anchor their brand online and hold their ground. A DBA of TMB Holdings.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="services.html#web">Website Design</a>
+          <a href="services.html#seo">SEO</a>
+          <a href="services.html#social">Social Media</a>
+          <a href="services.html#branding">Branding</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="work.html">Our Work</a>
+          <a href="about.html">About</a>
+          <a href="blog/index.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:hello@takeholdmedia.com">hello@takeholdmedia.com</a>
+          <a href="tel:XXXXXXXXXX">XXXXX</a>
+          <a href="contact.html">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TakeHold Media · DBA TMB Holdings · All rights reserved</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
