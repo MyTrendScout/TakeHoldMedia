@@ -4,9 +4,178 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Work — TakeHold Media</title>
-  <meta name="description" content="See what TakeHold Media has built — websites, branding, and digital campaigns for local and growing businesses." />
+  <meta name="description" content="See what TakeHold Media has built — websites, branding, and digital campaigns across construction, health, vacation rentals, fitness, and more." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+    [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+    [data-reveal-delay="1"] { transition-delay: 0.1s; }
+    [data-reveal-delay="2"] { transition-delay: 0.2s; }
+    [data-reveal-delay="3"] { transition-delay: 0.3s; }
+    [data-reveal-delay="4"] { transition-delay: 0.4s; }
+    [data-reveal-delay="5"] { transition-delay: 0.5s; }
+    [data-reveal-delay="6"] { transition-delay: 0.6s; }
+
+    /* ── Portfolio grid ── */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    .p-card {
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--taupe);
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
+      display: flex;
+      flex-direction: column;
+    }
+    .p-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(13,31,58,0.12); }
+
+    .p-card-img {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+    .p-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+      filter: grayscale(15%);
+    }
+    .p-card:hover .p-card-img img { transform: scale(1.06); filter: grayscale(0%); }
+
+    .p-card-status {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+    }
+    .status-live { background: rgba(47,110,111,0.9); color: white; }
+    .status-progress { background: rgba(201,162,75,0.9); color: white; }
+
+    .p-card-body { padding: 1.8rem; flex: 1; display: flex; flex-direction: column; }
+    .p-card-industry {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .p-card-body h3 { color: var(--navy); margin-bottom: 0.5rem; font-size: 1.15rem; }
+    .p-card-body p { font-size: 0.88rem; color: var(--mid); flex: 1; margin-bottom: 1.4rem; }
+    .p-card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+    .p-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--taupe);
+    }
+    .p-card-url { font-size: 0.78rem; color: var(--light); }
+    .p-card-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: gap 0.3s;
+    }
+    .p-card-link:hover { gap: 0.7rem; }
+
+    /* ── Featured big card ── */
+    .featured-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--taupe);
+    }
+    .featured-row:last-child { border-bottom: none; }
+    .featured-row.reverse { direction: rtl; }
+    .featured-row.reverse > * { direction: ltr; }
+    .featured-img {
+      border-radius: 12px;
+      overflow: hidden;
+      height: 380px;
+    }
+    .featured-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+    .featured-img:hover img { transform: scale(1.04); }
+    .featured-body {}
+    .featured-body .p-card-industry { font-size: 0.72rem; }
+    .featured-body h2 { color: var(--navy); font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 1rem; }
+    .featured-body p { font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+    /* ── Industry filter tabs ── */
+    .filter-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .filter-tab {
+      padding: 0.45rem 1.1rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      border: 1.5px solid var(--taupe);
+      color: var(--mid);
+      cursor: pointer;
+      transition: all 0.25s;
+      background: transparent;
+    }
+    .filter-tab:hover, .filter-tab.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
+
+    /* ── Industries strip ── */
+    .industry-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--taupe);
+      border-bottom: 1px solid var(--taupe);
+      margin-top: 5rem;
+    }
+    .industry-item {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-right: 1px solid var(--taupe);
+      transition: background 0.3s;
+    }
+    .industry-item:last-child { border-right: none; }
+    .industry-item:hover { background: var(--offwhite); }
+    .industry-item .ti { font-size: 1.6rem; color: var(--teal); display: block; margin-bottom: 0.6rem; }
+    .industry-item span { font-size: 0.75rem; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    @media (max-width: 1024px) {
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .industry-strip { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .featured-row { grid-template-columns: 1fr; }
+      .featured-row.reverse { direction: ltr; }
+      .industry-strip { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
 </head>
 <body>
 
@@ -30,116 +199,226 @@
 
   <!-- ── Hero ── -->
   <section class="hero-page">
-    <div class="hero-overlay"></div>
-    <div class="hero-grid"></div>
+    <div class="hero-dots"></div>
+    <div class="hero-anchor-bg"><i class="ti ti-anchor"></i></div>
     <div class="container hero-content">
       <span class="eyebrow hero-eyebrow">Portfolio</span>
       <h1>Work that <em>performs.</em></h1>
-      <p class="hero-sub">Every project we take on is built around a specific goal. Here's what happens when strategy meets execution.</p>
+      <p class="hero-sub">Six clients. Six industries. One standard — built to hold.</p>
     </div>
   </section>
 
-  <!-- ── Featured: Built by Rainier ── -->
-  <section class="section">
+  <!-- ── Industries ── -->
+  <div class="industry-strip">
+    <div class="industry-item"><i class="ti ti-home-2"></i><span>Construction</span></div>
+    <div class="industry-item"><i class="ti ti-beach"></i><span>Travel</span></div>
+    <div class="industry-item"><i class="ti ti-heart-rate-monitor"></i><span>Health</span></div>
+    <div class="industry-item"><i class="ti ti-run"></i><span>Fitness</span></div>
+    <div class="industry-item"><i class="ti ti-building"></i><span>Restoration</span></div>
+    <div class="industry-item"><i class="ti ti-device-desktop"></i><span>Digital Media</span></div>
+  </div>
+
+  <!-- ── Featured Projects ── -->
+  <section class="section bg-white">
     <div class="container">
-      <span class="eyebrow">Featured Project</span>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-top:2rem;">
-        <div>
-          <div style="border-radius:12px; overflow:hidden; height:420px;">
-            <img src="https://images.unsplash.com/photo-1524431144429-03fdd30eee26?w=900&auto=format&fit=crop" alt="Built by Rainier Custom Homes website" style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
-          </div>
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">Featured Work</span>
+        <h2>Projects we're proud of.</h2>
+      </div>
+
+      <!-- Rainier -->
+      <div class="featured-row" data-reveal>
+        <div class="featured-img">
+          <img src="https://images.unsplash.com/photo-1524431144429-03fdd30eee26?w=900&auto=format&fit=crop" alt="Built by Rainier Custom Homes" loading="lazy" />
         </div>
-        <div>
-          <div class="work-card-tags" style="margin-bottom:1rem;">
+        <div class="featured-body">
+          <div class="p-card-industry">Construction · Custom Homes</div>
+          <h2>Built by Rainier Custom Homes</h2>
+          <div class="p-card-tags">
             <span class="tag">Web Design & Build</span>
             <span class="tag">SEO</span>
             <span class="tag">Branding</span>
           </div>
-          <h2 style="color:var(--navy); margin-bottom:1rem;">Built by Rainier<br>Custom Homes</h2>
-          <p style="font-size:1.05rem; margin-bottom:1.5rem;">Austin Smith runs a luxury custom home building company in Central Florida — a three-generation family trade. The site needed to match the caliber of their work: premium, trustworthy, and built to generate qualified leads.</p>
-          <p style="margin-bottom:2rem;">We built the entire site from scratch — homepage, portfolio, story, contact, and a full SEO blog strategy targeting Central Florida search terms. No templates. No page builders. Just a fast, clean site that tells the right story to the right buyers.</p>
-          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="https://www.builtbyrainier.com" target="_blank" class="btn btn-primary">Visit Live Site <i class="ti ti-external-link"></i></a>
+          <p>A three-generation luxury custom home builder in Central Florida. We built the full site from scratch — homepage, portfolio, story, contact, and a targeted SEO blog strategy for the Orlando, Winter Park, Lake Nona, and Windermere markets.</p>
+          <a href="https://www.builtbyrainier.com" target="_blank" class="btn btn-primary">Visit Live Site <i class="ti ti-external-link"></i></a>
+        </div>
+      </div>
+
+      <!-- Resort Rental Direct -->
+      <div class="featured-row reverse" data-reveal>
+        <div class="featured-img">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&auto=format&fit=crop" alt="Resort Rental Direct" loading="lazy" />
+        </div>
+        <div class="featured-body">
+          <div class="p-card-industry">Travel · Vacation Rentals</div>
+          <h2>Resort Rental Direct</h2>
+          <div class="p-card-tags">
+            <span class="tag">Web Design & Build</span>
+            <span class="tag">SEO</span>
+            <span class="tag">Digital Strategy</span>
           </div>
+          <p>A vacation rental marketplace connecting travelers directly with resort properties — cutting out the middleman and the fees. Full platform design, booking flow, and organic search strategy.</p>
+          <a href="https://resortrentaldirect.com" target="_blank" class="btn btn-primary">Visit Live Site <i class="ti ti-external-link"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── More Work ── -->
-  <section class="section bg-cream">
+  <!-- ── Portfolio Grid ── -->
+  <section class="section bg-offwhite">
     <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">More Projects</span>
-        <h2>What else we've built</h2>
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">All Projects</span>
+        <h2>The full portfolio.</h2>
       </div>
-      <div class="work-grid">
-        <div class="work-card">
-          <div class="work-card-img" style="background:var(--navy); display:flex; align-items:center; justify-content:center;">
-            <i class="ti ti-home-2" style="font-size:3rem; color:rgba(255,255,255,0.2);"></i>
+
+      <div class="portfolio-grid">
+
+        <!-- UCR -->
+        <div class="p-card" data-reveal data-reveal-delay="1">
+          <div class="p-card-img">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&auto=format&fit=crop" alt="Unlimited Construction & Restoration" loading="lazy" />
+            <span class="p-card-status status-progress">Managed</span>
           </div>
-          <div class="work-card-body">
-            <div class="work-card-tags">
+          <div class="p-card-body">
+            <div class="p-card-industry">Construction · Restoration</div>
+            <h3>Unlimited Construction & Restoration</h3>
+            <div class="p-card-tags">
               <span class="tag">Web Design</span>
               <span class="tag">Branding</span>
+              <span class="tag">Lead Gen</span>
             </div>
-            <h3>XXXXX — Coming Soon</h3>
-            <p>Details for this project will be added when the client approves the case study.</p>
-            <span class="work-link" style="color:var(--light); cursor:default;">In Progress</span>
+            <p>Full-service construction and restoration contractor. Site build and brand positioning focused on insurance claims, storm damage, and commercial restoration across Florida.</p>
+            <div class="p-card-footer">
+              <span class="p-card-url">unlimitedconstructionrestoration.com</span>
+              <a href="https://www.unlimitedconstructionrestoration.com" target="_blank" class="p-card-link">Visit <i class="ti ti-external-link"></i></a>
+            </div>
           </div>
         </div>
-        <div class="work-card">
-          <div class="work-card-img" style="background:var(--teal); display:flex; align-items:center; justify-content:center; opacity:0.7;">
-            <i class="ti ti-building-store" style="font-size:3rem; color:rgba(255,255,255,0.4);"></i>
+
+        <!-- MyLiveGoodHealth -->
+        <div class="p-card" data-reveal data-reveal-delay="2">
+          <div class="p-card-img">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&auto=format&fit=crop" alt="MyLiveGoodHealth" loading="lazy" />
+            <span class="p-card-status status-progress">Managed</span>
           </div>
-          <div class="work-card-body">
-            <div class="work-card-tags">
+          <div class="p-card-body">
+            <div class="p-card-industry">Health & Wellness</div>
+            <h3>MyLiveGoodHealth</h3>
+            <div class="p-card-tags">
+              <span class="tag">Web Design</span>
               <span class="tag">SEO</span>
               <span class="tag">Social Media</span>
             </div>
-            <h3>XXXXX — Coming Soon</h3>
-            <p>Details for this project will be added when the client approves the case study.</p>
-            <span class="work-link" style="color:var(--light); cursor:default;">In Progress</span>
+            <p>Health and wellness brand focused on accessible, sustainable living. Digital presence strategy, content marketing, and SEO targeting health-conscious consumers.</p>
+            <div class="p-card-footer">
+              <span class="p-card-url">mylivegoodhealth.com</span>
+              <a href="https://mylivegoodhealth.com" target="_blank" class="p-card-link">Visit <i class="ti ti-external-link"></i></a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ── Results Strip ── -->
-  <section class="section bg-navy">
-    <div class="container text-center">
-      <span class="eyebrow" style="color:var(--teal);">By the Numbers</span>
-      <h2 style="color:var(--white); margin-bottom:3rem;">Results we're proud of</h2>
-      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:2rem;">
-        <div>
-          <div style="font-family:var(--font-serif); font-size:3rem; font-weight:700; color:var(--white);">XXXXX<span style="color:var(--teal);">+</span></div>
-          <div style="font-size:0.78rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.4rem;">Sites Launched</div>
+        <!-- MyPaceZone -->
+        <div class="p-card" data-reveal data-reveal-delay="3">
+          <div class="p-card-img">
+            <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=700&auto=format&fit=crop" alt="MyPaceZone" loading="lazy" />
+            <span class="p-card-status status-progress">Managed</span>
+          </div>
+          <div class="p-card-body">
+            <div class="p-card-industry">Fitness · Training</div>
+            <h3>MyPaceZone</h3>
+            <div class="p-card-tags">
+              <span class="tag">Web Design</span>
+              <span class="tag">Branding</span>
+              <span class="tag">SEO</span>
+            </div>
+            <p>Fitness and pace training platform helping athletes train smarter. Brand identity, site build, and content strategy for the performance fitness market.</p>
+            <div class="p-card-footer">
+              <span class="p-card-url">mypacezone.com</span>
+              <a href="https://mypacezone.com" target="_blank" class="p-card-link">Visit <i class="ti ti-external-link"></i></a>
+            </div>
+          </div>
         </div>
-        <div>
-          <div style="font-family:var(--font-serif); font-size:3rem; font-weight:700; color:var(--white);">XXXXX<span style="color:var(--teal);">%</span></div>
-          <div style="font-size:0.78rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.4rem;">Client Retention</div>
+
+        <!-- CredNet -->
+        <div class="p-card" data-reveal data-reveal-delay="4">
+          <div class="p-card-img">
+            <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=700&auto=format&fit=crop" alt="CredNet" loading="lazy" />
+            <span class="p-card-status status-progress">Managed</span>
+          </div>
+          <div class="p-card-body">
+            <div class="p-card-industry">Digital Media · Technology</div>
+            <h3>CredNet</h3>
+            <div class="p-card-tags">
+              <span class="tag">Web Design</span>
+              <span class="tag">Branding</span>
+              <span class="tag">Digital Strategy</span>
+            </div>
+            <p>Digital media and technology platform. Brand positioning, full site build, and digital infrastructure strategy for a multi-vertical media company.</p>
+            <div class="p-card-footer">
+              <span class="p-card-url">cred-net.org</span>
+              <a href="https://cred-net.org" target="_blank" class="p-card-link">Visit <i class="ti ti-external-link"></i></a>
+            </div>
+          </div>
         </div>
-        <div>
-          <div style="font-family:var(--font-serif); font-size:3rem; font-weight:700; color:var(--white);">XXXXX<span style="color:var(--teal);">+</span></div>
-          <div style="font-size:0.78rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.4rem;">Keywords Ranked</div>
+
+        <!-- Built by Rainier (grid repeat) -->
+        <div class="p-card" data-reveal data-reveal-delay="5">
+          <div class="p-card-img">
+            <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=700&auto=format&fit=crop" alt="Built by Rainier" loading="lazy" />
+            <span class="p-card-status status-progress">In Progress</span>
+          </div>
+          <div class="p-card-body">
+            <div class="p-card-industry">Construction · Luxury Homes</div>
+            <h3>Built by Rainier Custom Homes</h3>
+            <div class="p-card-tags">
+              <span class="tag">Web Design</span>
+              <span class="tag">SEO</span>
+              <span class="tag">Branding</span>
+            </div>
+            <p>Luxury custom home builder serving Central Florida. Full site, portfolio, SEO blog, and lead generation strategy.</p>
+            <div class="p-card-footer">
+              <span class="p-card-url">builtbyrainier.com</span>
+              <a href="https://www.builtbyrainier.com" target="_blank" class="p-card-link">Visit <i class="ti ti-external-link"></i></a>
+            </div>
+          </div>
         </div>
-        <div>
-          <div style="font-family:var(--font-serif); font-size:3rem; font-weight:700; color:var(--white);">XXXXX</div>
-          <div style="font-size:0.78rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.4rem;">Industries Served</div>
+
+        <!-- Resort Rental Direct (grid repeat) -->
+        <div class="p-card" data-reveal data-reveal-delay="6">
+          <div class="p-card-img">
+            <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=700&auto=format&fit=crop" alt="Resort Rental Direct" loading="lazy" />
+            <span class="p-card-status status-progress">Managed</span>
+          </div>
+          <div class="p-card-body">
+            <div class="p-card-industry">Travel · Vacation Rentals</div>
+            <h3>Resort Rental Direct</h3>
+            <div class="p-card-tags">
+              <span class="tag">Web Design</span>
+              <span class="tag">SEO</span>
+              <span class="tag">Digital Strategy</span>
+            </div>
+            <p>Vacation rental marketplace eliminating booking fees. Platform design, booking flow, and organic search strategy.</p>
+            <div class="p-card-footer">
+              <span class="p-card-url">resortrentaldirect.com</span>
+              <a href="https://resortrentaldirect.com" target="_blank" class="p-card-link">Visit <i class="ti ti-external-link"></i></a>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- ── CTA ── -->
   <section class="cta-strip">
-    <div class="container">
-      <h2>Your project could be next.</h2>
-      <p>We take on a limited number of new clients each quarter. If you're serious about your digital presence, let's talk.</p>
+    <div class="cta-anchor-bg"><i class="ti ti-anchor"></i></div>
+    <div class="container" style="position:relative; z-index:1; text-align:center;">
+      <h2 style="color:var(--white);">Your business could be next.</h2>
+      <p style="color:rgba(255,255,255,0.6); max-width:480px; margin:1rem auto 2.5rem;">We take on a limited number of new clients each quarter. If you're serious about your digital presence, let's talk.</p>
       <div class="btn-actions">
         <a href="contact.html" class="btn btn-primary">Start a Project <i class="ti ti-arrow-right"></i></a>
-        <a href="services.html" class="btn btn-outline">View Services</a>
+        <a href="services.html" class="btn btn-outline-white">View Services</a>
       </div>
     </div>
   </section>
@@ -189,9 +468,16 @@
 
   <script>
     document.getElementById('hamburger').addEventListener('click', () => {
-      document.querySelector('.nav-links').style.display =
-        document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex';
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
     });
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
