@@ -405,21 +405,18 @@
       overflow: hidden;
     }
     .testi-scroll {
-      display: flex;
-      gap: 2rem;
-      overflow-x: auto;
-      padding: 2rem 5vw;
-      scrollbar-width: none;
-      scroll-behavior: smooth;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      padding: 0 5vw;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .testi-scroll::-webkit-scrollbar { display: none; }
     .testi-card-dark {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 12px;
-      padding: 2.5rem;
-      min-width: 360px;
-      flex-shrink: 0;
+      padding: 2.2rem;
       transition: background 0.3s, transform 0.3s;
     }
     .testi-card-dark:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); }
