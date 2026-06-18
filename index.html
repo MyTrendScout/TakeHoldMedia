@@ -302,16 +302,15 @@
     .work-small-card-body {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(13,31,58,0.8) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(13,31,58,0.75) 0%, rgba(13,31,58,0.1) 50%, transparent 100%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       padding: 1.5rem;
-      opacity: 0;
+      opacity: 1;
       transition: opacity 0.4s;
     }
-    .work-small-card:hover .work-small-card-body { opacity: 1; }
-    .work-small-card-body h4 { color: var(--white); font-size: 0.95rem; }
+    .work-small-card-body h4 { color: var(--white); font-size: 0.95rem; font-weight: 600; text-shadow: 0 1px 4px rgba(0,0,0,0.4); }
 
     /* ─── Steps horizontal ───────────────────────────── */
     .process-grid {
