@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Much Does a Website Cost for a Small Business? (Honest Answer) | TakeHold Media</title>
+  <meta name="description" content="What does a website actually cost for a small business? We break down real price ranges — DIY, template agencies, and custom builds — so you know what you're buying." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    /* ── Article Hero ── */
+    .article-hero {
+      padding: 9rem 0 4rem;
+      background: var(--offwhite);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--taupe) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .article-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--light);
+      margin-bottom: 1.5rem;
+    }
+    .article-breadcrumb a { color: var(--teal); transition: color 0.2s; }
+    .article-breadcrumb a:hover { color: var(--navy); }
+    .article-breadcrumb .sep { color: var(--taupe); }
+    .article-cat {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(47,110,111,0.1);
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--light);
+    }
+    .article-meta .dot { color: var(--taupe); }
+    .article-hero-img {
+      margin-top: 3rem;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 420px;
+    }
+    .article-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Article Body ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 5rem;
+      padding: 5rem 0 6rem;
+      align-items: start;
+    }
+    .article-prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin: 2.8rem 0 0.8rem;
+      line-height: 1.3;
+    }
+    .article-prose h2:first-child { margin-top: 0; }
+    .article-prose p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose ul {
+      list-style: none;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .article-prose ul li {
+      font-size: 0.97rem;
+      color: var(--mid);
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .article-prose ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .article-prose .callout {
+      background: var(--offwhite);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .callout p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--navy);
+    }
+    .article-prose .step-block {
+      background: var(--white);
+      border: 1px solid var(--taupe);
+      border-radius: 10px;
+      padding: 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .step-block ol {
+      list-style: none;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 0;
+    }
+    .article-prose .step-block ol li {
+      counter-increment: steps;
+      padding-left: 2.2rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .article-prose .step-block ol li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+    }
+    .article-prose hr {
+      border: none;
+      border-top: 1px solid var(--taupe);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-cta {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .sidebar-cta-anchor {
+      position: absolute;
+      right: -15px;
+      bottom: -10px;
+      font-size: 8rem;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+    .sidebar-cta h4 {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta .btn { width: 100%; justify-content: center; position: relative; z-index: 1; }
+    .sidebar-related h5 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1.2rem;
+    }
+    .sidebar-related a {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--taupe);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .sidebar-related a:hover { color: var(--teal); }
+    .sidebar-related a:last-child { border-bottom: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .article-sidebar { position: static; }
+      .article-hero-img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="always-light" id="nav">
+    <a href="../index.html" class="wordmark">
+      <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+      <span class="wordmark-line2">Media</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../work.html">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../contact.html" class="btn-nav">Get Started</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── Article Hero ── -->
+  <section class="article-hero">
+    <div class="hero-dots"></div>
+    <div class="container">
+      <div class="article-hero-inner">
+        <div class="article-breadcrumb">
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <span>Web Design</span>
+        </div>
+        <span class="article-cat">Web Design</span>
+        <h1>How Much Does a Website Cost for a Small Business? (Honest Answer)</h1>
+        <div class="article-meta">
+          <span>July 2026</span>
+          <span class="dot">·</span>
+          <span>7 min read</span>
+          <span class="dot">·</span>
+          <span>TakeHold Media</span>
+        </div>
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&auto=format&fit=crop" alt="Website pricing for small businesses" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Article Body ── -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Main Content -->
+        <div class="article-prose">
+
+          <p>Ask ten web design agencies what a website costs and you'll get ten non-answers. "It depends." "Every project is different." "Let's get on a call."</p>
+
+          <p>That's frustrating. You're trying to plan a budget, not enter a negotiation.</p>
+
+          <p>So here's an honest breakdown. Real price ranges. What you actually get at each tier. And the factors that push costs up or down. We don't post our prices publicly — most agencies don't — but we can at least tell you what the market looks like so you know what you're buying.</p>
+
+          <hr />
+
+          <h2>Tier 1: DIY — $0 to $500/year</h2>
+
+          <p>Platforms like Wix, Squarespace, and GoDaddy Website Builder let you build and host a site yourself for roughly $15–$45 per month. If you're technically comfortable and have time to learn the platform, this is viable for very early-stage businesses.</p>
+
+          <p>What you get: a functional site that looks reasonably professional out of the box. Templates handle most of the design decisions. You control your own updates.</p>
+
+          <p>What you don't get: a site built around how customers actually search for you. DIY platforms make it easy to build something — but hard to build something optimized. You'll likely end up with generic headlines, no local SEO signals, and performance issues that quietly suppress your Google ranking.</p>
+
+          <div class="callout">
+            <p><strong>Best for:</strong> Freelancers, side projects, or businesses testing a concept before committing to a real web presence. Not the right call if you're trying to compete for local search traffic.</p>
+          </div>
+
+          <hr />
+
+          <h2>Tier 2: Template Agency — $1,000 to $5,000</h2>
+
+          <p>This is the most crowded part of the market. Agencies in this tier take a premium WordPress theme or a platform like Webflow, customize it with your content and colors, and hand it over. Turnaround is usually two to six weeks.</p>
+
+          <p>The pitch sounds good: professional design without the custom price tag. And for some businesses, it works fine. But there are real trade-offs to understand.</p>
+
+          <ul>
+            <li>Your site is built on someone else's code structure. Customization has a ceiling.</li>
+            <li>Template themes are loaded with features you'll never use — which slows the site down.</li>
+            <li>Dozens of other businesses may be using the same template, possibly in your industry.</li>
+            <li>Post-launch support is often limited or billed hourly.</li>
+          </ul>
+
+          <p>That said, a well-executed template build beats a bad custom build every time. The key question isn't "is it a template" — it's "does this agency know how to configure it well, optimize it for speed, and set it up for local SEO?"</p>
+
+          <div class="callout">
+            <p><strong>Best for:</strong> Small businesses with a limited budget who need a credible web presence quickly. Works best when paired with someone who understands SEO — otherwise you're paying for a brochure that nobody finds.</p>
+          </div>
+
+          <hr />
+
+          <h2>Tier 3: Custom Agency — $5,000 to $20,000+</h2>
+
+          <p>Custom means the site is built from scratch — or close to it — around your business specifically. The structure, the layout, the copy hierarchy, the conversion path, and the technical architecture are all intentional decisions, not defaults.</p>
+
+          <p>This is the range where agencies like TakeHold Media operate. Not because custom is always right, but because for established local businesses competing for real search traffic, a site built around your specific goals and market outperforms a templated one over time.</p>
+
+          <p>What drives cost in this tier:</p>
+
+          <ul>
+            <li><strong>Number of pages.</strong> A five-page service site costs less than a twelve-page site with individual service landing pages, a portfolio, and a blog.</li>
+            <li><strong>Custom functionality.</strong> Booking integrations, quote calculators, e-commerce, membership areas — each adds time.</li>
+            <li><strong>Copywriting.</strong> Some agencies include it. Many don't. Writing good web copy takes real skill and adds cost when scoped in.</li>
+            <li><strong>Photography.</strong> Stock images are free. Custom photography isn't — and custom photography converts better.</li>
+            <li><strong>Post-launch support.</strong> Ongoing maintenance, hosting management, and SEO retainers are separate from the build cost.</li>
+          </ul>
+
+          <div class="callout">
+            <p><strong>Best for:</strong> Established businesses where the website is a primary sales tool — local service companies, professional practices, contractors, and any business where a prospect's first impression is online. The ROI math works when your average client is worth $2,000 or more.</p>
+          </div>
+
+          <hr />
+
+          <h2>What Most People Don't Factor In</h2>
+
+          <p>The build cost is not the total cost. A website isn't a one-time purchase — it's an ongoing operating cost. Here's what people routinely forget:</p>
+
+          <div class="step-block">
+            <ol>
+              <li><strong>Hosting and domain.</strong> $10–$50/month depending on your host and traffic. You'll pay this every month, forever.</li>
+              <li><strong>SSL certificate.</strong> Often included in hosting, but not always. Required for Google to trust your site.</li>
+              <li><strong>Ongoing updates.</strong> If you're on WordPress, themes and plugins need regular updates or they become security risks. Someone has to do this.</li>
+              <li><strong>SEO.</strong> A site without ongoing SEO effort is a static brochure. Search rankings require maintenance — content, link building, technical upkeep.</li>
+              <li><strong>Copywriting and content.</strong> Even post-launch, your site needs new pages, blog posts, or updated service descriptions as your business evolves.</li>
+            </ol>
+          </div>
+
+          <p>A $3,000 site with no hosting, no maintenance, and no SEO investment will underperform a $7,000 site with ongoing support every time. Factor in the full picture before comparing quotes.</p>
+
+          <hr />
+
+          <h2>What Drives the Gap Between Agencies</h2>
+
+          <p>Two agencies can quote the same scope — five pages, custom design, mobile-optimized — and one comes in at $2,500 and one at $9,000. Why?</p>
+
+          <p>A few things drive that gap. Offshore development lowers costs but adds communication layers and quality risk. Agencies with larger overhead (big offices, large teams, heavy marketing budgets) charge more to cover it. Boutique shops with senior talent can charge premium rates without the overhead. And some agencies simply price low to win projects, then make it up in change orders.</p>
+
+          <p>The price alone tells you almost nothing. Ask to see live examples. Ask who specifically will be building your site. Ask what "post-launch support" actually means and what it costs. Ask whether SEO is included or billed separately.</p>
+
+          <div class="callout">
+            <p><strong>A low quote is a question, not a win.</strong> The question is: where are they cutting? Sometimes the answer is fine. Sometimes it's your site.</p>
+          </div>
+
+          <hr />
+
+          <h2>So What Should You Expect to Pay?</h2>
+
+          <p>If you're a local service business in Orlando — a contractor, a medical practice, a boutique, a restaurant, a professional services firm — a site that actually works as a marketing tool will typically run between $4,000 and $12,000 for the build, depending on scope and complexity.</p>
+
+          <p>That's not a quote. That's the market. Your number depends on what you need, what you're starting with, and what agency you choose.</p>
+
+          <p>What we can tell you: a conversation with our team takes about 20 minutes, and at the end of it you'll have a realistic sense of what your project would cost. No pitch. No pressure. Just a clear answer — which is what you came here looking for anyway.</p>
+
+          <p><a href="../services.html#web" style="color: var(--teal); font-weight: 600;">See our web design services →</a></p>
+
+          <hr />
+
+          <div class="callout">
+            <p><strong>Want a real number for your project?</strong> One conversation and we can give you a clear picture. <a href="../contact.html" style="color: var(--teal);">Schedule a free call →</a></p>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-anchor"><i class="ti ti-anchor"></i></div>
+            <h4>Want a real number?</h4>
+            <p>One conversation and we'll give you a clear picture of what your project would cost — no pitch, no pressure.</p>
+            <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+          </div>
+          <div class="sidebar-related">
+            <h5>More from the blog</h5>
+            <a href="custom-website-vs-template.html">Custom Website vs. Template: What Nobody Tells You</a>
+            <a href="why-your-business-isnt-showing-up-on-google.html">Why Your Business Isn't Showing Up on Google</a>
+            <a href="index.html">Browse all articles →</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Strip ── -->
+  <section class="cta-strip">
+    <div class="cta-anchor-bg"><i class="ti ti-anchor"></i></div>
+    <div class="container" style="position:relative; z-index:1;">
+      <h2>Ready to get a real number?</h2>
+      <p>We build custom websites for local and growing businesses in Orlando and beyond. One call and we'll tell you exactly what your project would look like — and what it would cost.</p>
+      <div class="btn-actions">
+        <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+        <a href="../services.html#web" class="btn btn-outline-white">See Our Web Design Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="wordmark wordmark-white">
+            <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+            <span class="wordmark-line2">Media</span>
+          </a>
+          <p>Helping local and growing businesses anchor their brand online and hold their ground.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="../services.html#web">Website Design</a>
+          <a href="../services.html#seo">SEO</a>
+          <a href="../services.html#social">Social Media</a>
+          <a href="../services.html#branding">Branding</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../work.html">Our Work</a>
+          <a href="../about.html">About</a>
+          <a href="index.html">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:hello@takeholdmedia.com">hello@takeholdmedia.com</a>
+          <a href="tel:3212741108">321.274.1108</a>
+          <a href="../contact.html">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TakeHold Media · DBA TMB Holdings · All rights reserved</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
