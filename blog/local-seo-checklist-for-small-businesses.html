@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Local SEO Checklist Every Small Business Should Run Once a Year | TakeHold Media</title>
+  <meta name="description" content="A practical local SEO checklist covering Google Business Profile, NAP consistency, citations, reviews, on-page signals, and site speed — run it once a year." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    /* ── Article Hero ── */
+    .article-hero {
+      padding: 9rem 0 4rem;
+      background: var(--offwhite);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--taupe) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .article-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--light);
+      margin-bottom: 1.5rem;
+    }
+    .article-breadcrumb a { color: var(--teal); transition: color 0.2s; }
+    .article-breadcrumb a:hover { color: var(--navy); }
+    .article-breadcrumb .sep { color: var(--taupe); }
+    .article-cat {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(47,110,111,0.1);
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--light);
+    }
+    .article-meta .dot { color: var(--taupe); }
+    .article-hero-img {
+      margin-top: 3rem;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 420px;
+    }
+    .article-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Article Body ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 5rem;
+      padding: 5rem 0 6rem;
+      align-items: start;
+    }
+    .article-prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin: 2.8rem 0 0.8rem;
+      line-height: 1.3;
+    }
+    .article-prose h2:first-child { margin-top: 0; }
+    .article-prose p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose ul {
+      list-style: none;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .article-prose ul li {
+      font-size: 0.97rem;
+      color: var(--mid);
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .article-prose ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .article-prose .callout {
+      background: var(--offwhite);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .callout p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--navy);
+    }
+    .article-prose .step-block {
+      background: var(--white);
+      border: 1px solid var(--taupe);
+      border-radius: 10px;
+      padding: 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .step-block ol {
+      list-style: none;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 0;
+    }
+    .article-prose .step-block ol li {
+      counter-increment: steps;
+      padding-left: 2.2rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .article-prose .step-block ol li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+    }
+    .article-prose hr {
+      border: none;
+      border-top: 1px solid var(--taupe);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-cta {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .sidebar-cta-anchor {
+      position: absolute;
+      right: -15px;
+      bottom: -10px;
+      font-size: 8rem;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+    .sidebar-cta h4 {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta .btn { width: 100%; justify-content: center; position: relative; z-index: 1; }
+    .sidebar-related h5 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1.2rem;
+    }
+    .sidebar-related a {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--taupe);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .sidebar-related a:hover { color: var(--teal); }
+    .sidebar-related a:last-child { border-bottom: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .article-sidebar { position: static; }
+      .article-hero-img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="always-light" id="nav">
+    <a href="../index.html" class="wordmark">
+      <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+      <span class="wordmark-line2">Media</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../work.html">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../contact.html" class="btn-nav">Get Started</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── Article Hero ── -->
+  <section class="article-hero">
+    <div class="hero-dots"></div>
+    <div class="container">
+      <div class="article-hero-inner">
+        <div class="article-breadcrumb">
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <span>SEO</span>
+        </div>
+        <span class="article-cat">SEO</span>
+        <h1>The Local SEO Checklist Every Small Business Should Run Once a Year</h1>
+        <div class="article-meta">
+          <span>July 2026</span>
+          <span class="dot">·</span>
+          <span>6 min read</span>
+          <span class="dot">·</span>
+          <span>TakeHold Media</span>
+        </div>
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=1200&auto=format&fit=crop" alt="Local SEO checklist for small businesses" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Article Body ── -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Main Content -->
+        <div class="article-prose">
+
+          <p>Local SEO isn't a one-and-done project. Things drift. Listings go stale. A phone number changes and nobody updates Yelp. A new employee sets up a duplicate Google Business Profile. A competitor starts doing the basics you stopped doing six months ago.</p>
+
+          <p>Running this checklist once a year keeps you from falling behind without realizing it. It's thorough enough to catch real problems — and simple enough to hand to someone on your team.</p>
+
+          <p>Work through each section. When something's off, fix it before moving on.</p>
+
+          <hr />
+
+          <h2>1. Google Business Profile</h2>
+
+          <p>Your Google Business Profile (GBP) is the most important piece of local SEO infrastructure you own. If it's incomplete or out of date, nothing else on this list matters as much.</p>
+
+          <div class="step-block">
+            <ol>
+              <li><strong>Claim and verify your listing</strong> if you haven't already. Go to business.google.com. If someone else claimed it, request ownership.</li>
+              <li><strong>Check every field</strong> — business name, address, phone, website, hours (including holiday hours), and service area. These should match what's on your website exactly.</li>
+              <li><strong>Select the right primary category.</strong> This is the single biggest ranking factor inside GBP. "Digital marketing agency" and "advertising agency" are different categories with different search traffic. Pick the one that fits what you actually do.</li>
+              <li><strong>Fill in your services.</strong> GBP has a Services section. Use it. List every service you offer with a short description. This feeds into how Google matches you to searches.</li>
+              <li><strong>Add or update photos.</strong> Google reports that businesses with photos get 42% more requests for directions. Add your storefront, team, work samples, and interior if applicable. Aim for at least 10 photos — and add new ones every few months.</li>
+              <li><strong>Publish a GBP post.</strong> Posts expire after 7 days but they signal that your business is active. Commit to publishing one per week — an offer, an update, or a recent job.</li>
+            </ol>
+          </div>
+
+          <div class="callout">
+            <p><strong>Warning sign:</strong> If you search your business name and see two GBP listings, you have a duplicate. Duplicates split your reviews and confuse Google. Report the duplicate through GBP support and request removal.</p>
+          </div>
+
+          <hr />
+
+          <h2>2. NAP Consistency</h2>
+
+          <p>NAP stands for Name, Address, Phone number. Google verifies your business data by cross-referencing it across dozens of directories — Yelp, Bing Places, Apple Maps, Yellow Pages, and more. When that information is inconsistent, it signals unreliability.</p>
+
+          <p>This sounds mundane. It has a real impact on rankings.</p>
+
+          <div class="step-block">
+            <ol>
+              <li><strong>Decide on a canonical format</strong> for your business name, address, and phone number. Write it down. Every listing should match this exactly — same abbreviations, same suite number format, same phone format.</li>
+              <li><strong>Search your business name and phone number together</strong> on Google. Look at every listing that appears. Note any that have wrong or outdated information.</li>
+              <li><strong>Check the big four directories:</strong> Yelp, Bing Places, Apple Maps, and Facebook. These carry the most weight. Fix any discrepancies here first.</li>
+              <li><strong>Search data aggregators like Foursquare and Data Axle</strong> — many smaller directories pull from these. Fixing the source fixes the downstream listings.</li>
+            </ol>
+          </div>
+
+          <p>If you moved, changed your number, or rebranded in the last few years, this audit is especially important. Old information doesn't disappear on its own.</p>
+
+          <hr />
+
+          <h2>3. Citations</h2>
+
+          <p>Citations are any mention of your business on another website — with or without a link. A listing on a local chamber of commerce site is a citation. So is a mention in a neighborhood Facebook group.</p>
+
+          <p>Volume, accuracy, and quality of citations all matter for local SEO.</p>
+
+          <div class="step-block">
+            <ol>
+              <li><strong>Make sure you're listed on the essentials:</strong> Google Business Profile, Yelp, Bing Places, Apple Maps, Facebook, and your local chamber of commerce website.</li>
+              <li><strong>Look for industry-specific directories.</strong> A restaurant belongs on TripAdvisor and OpenTable. A contractor belongs on Houzz and Angi. A medical practice belongs on Healthgrades and Zocdoc. Find the directories that matter in your category.</li>
+              <li><strong>Check for stale listings</strong> you may have forgotten about — old Yellow Pages entries, a profile on a directory you created years ago. Update or remove them.</li>
+            </ol>
+          </div>
+
+          <div class="callout">
+            <p><strong>Practical tip:</strong> Use a free tool like Moz Local or BrightLocal to scan your citation footprint. They'll show you which directories you're listed on, which you're missing from, and where your information is wrong.</p>
+          </div>
+
+          <hr />
+
+          <h2>4. Reviews</h2>
+
+          <p>Reviews are a ranking signal and a conversion signal. A business with 12 reviews from three years ago will consistently rank below a competitor with 60 recent ones. Recency matters.</p>
+
+          <div class="step-block">
+            <ol>
+              <li><strong>Check your review count on Google.</strong> If you have fewer than 20 reviews, getting more should be a priority this quarter.</li>
+              <li><strong>Look at recency.</strong> When was your last review? If it's been more than two months, your pipeline for asking has broken down. Fix it — make asking for reviews a standard part of your close or follow-up process.</li>
+              <li><strong>Respond to every review</strong> — positive and negative — within one week. A thoughtful response to a negative review is often more persuasive to a potential customer than the negative review itself.</li>
+              <li><strong>Check Yelp and Facebook</strong> too. Google is the priority, but reviews on other platforms feed into your broader reputation and some directory rankings.</li>
+            </ol>
+          </div>
+
+          <hr />
+
+          <h2>5. On-Page Local Signals</h2>
+
+          <p>Your website needs to tell Google — in plain text — what you do and where you do it. Most small business websites don't do this well.</p>
+
+          <div class="step-block">
+            <ol>
+              <li><strong>Check your title tags.</strong> The title tag is the text in your browser tab. Your homepage title should include your primary service and your city. "Web Design Agency in Orlando, FL | TakeHold Media" is better than "Home | TakeHold Media."</li>
+              <li><strong>Check your H1 heading.</strong> Every page should have one H1. It should describe what the page is about using language your customers search for.</li>
+              <li><strong>Add your city to your homepage copy.</strong> If a search engine or potential customer reads your homepage, is it clear where you operate? It should be — in the first paragraph or two, not buried in the footer.</li>
+              <li><strong>Check your meta descriptions.</strong> These don't directly affect rankings, but they affect click-through rates from search results. Every page should have a unique meta description under 160 characters that makes someone want to click.</li>
+              <li><strong>Make sure your NAP is in your website footer</strong> in text format (not an image). Search engines can read text. They can't always read images.</li>
+            </ol>
+          </div>
+
+          <hr />
+
+          <h2>6. Website Speed and Mobile Experience</h2>
+
+          <p>Google ranks mobile-first. If your site is slow or broken on a phone, you're being penalized — even if your desktop experience is fine.</p>
+
+          <div class="step-block">
+            <ol>
+              <li><strong>Run your site through Google PageSpeed Insights</strong> (pagespeed.web.dev). Look at the mobile score specifically. Below 50 is a problem. Below 30 is a serious problem.</li>
+              <li><strong>Pull up your website on your phone.</strong> Does the menu work? Can you read the text without zooming in? Do the buttons respond when you tap them? Can you find your phone number in two taps?</li>
+              <li><strong>Check your Core Web Vitals</strong> in Google Search Console — specifically Largest Contentful Paint (how fast the main content loads) and Cumulative Layout Shift (whether elements move around as the page loads). Both are Google ranking factors.</li>
+            </ol>
+          </div>
+
+          <div class="callout">
+            <p><strong>Common culprit:</strong> Uncompressed images are responsible for slow load times on most small business websites. Before uploading a photo to your site, compress it with a free tool like Squoosh or TinyPNG. A 4MB photo should be under 200KB on the web.</p>
+          </div>
+
+          <hr />
+
+          <h2>Run It, Then Decide What to Fix First</h2>
+
+          <p>After working through all six sections, you'll have a list of issues. Prioritize them this way:</p>
+
+          <ul>
+            <li><strong>GBP problems first</strong> — incomplete profile, wrong info, or duplicate listings. These have the highest direct impact on local rankings.</li>
+            <li><strong>NAP inconsistencies second</strong> — especially on major directories. These confuse Google about who you are.</li>
+            <li><strong>Review gaps third</strong> — get a system in place and execute it consistently.</li>
+            <li><strong>On-page and speed issues fourth</strong> — these take longer to fix but compound over time.</li>
+          </ul>
+
+          <p>Most businesses can knock out the GBP and NAP items themselves. The on-page and technical fixes often require someone who works in websites regularly.</p>
+
+          <p>TakeHold Media handles all of this for SEO clients — GBP management, citation cleanup, review strategy, and on-page optimization — as part of our <a href="../services.html#seo">local SEO retainer</a>. If you'd rather hand this list to someone and move on, that's an option.</p>
+
+          <div class="callout">
+            <p><strong>Rather have us run this for you?</strong> That's exactly what our SEO retainer covers. <a href="../contact.html">One call tells us both if it's a fit.</a></p>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-anchor"><i class="ti ti-anchor"></i></div>
+            <h4>Want us to run this for you?</h4>
+            <p>Our SEO retainer covers everything on this checklist — and keeps it maintained month after month.</p>
+            <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+          </div>
+          <div class="sidebar-related">
+            <h5>More from the blog</h5>
+            <a href="why-your-business-isnt-showing-up-on-google.html">Why Your Business Isn't Showing Up on Google</a>
+            <a href="how-much-does-a-website-cost-for-small-business.html">How Much Does a Website Cost for a Small Business?</a>
+            <a href="index.html">Browse all articles →</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Strip ── -->
+  <section class="cta-strip">
+    <div class="cta-anchor-bg"><i class="ti ti-anchor"></i></div>
+    <div class="container" style="position:relative; z-index:1;">
+      <h2>Rather have us run this for you?</h2>
+      <p>That's exactly what our SEO retainer covers. GBP management, citation cleanup, review strategy, on-page optimization — handled for you every month. One call and we'll show you what we'd do for your business specifically.</p>
+      <div class="btn-actions">
+        <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+        <a href="../services.html#seo" class="btn btn-outline-white">See Our SEO Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="wordmark wordmark-white">
+            <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+            <span class="wordmark-line2">Media</span>
+          </a>
+          <p>Helping local and growing businesses anchor their brand online and hold their ground.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="../services.html#web">Website Design</a>
+          <a href="../services.html#seo">SEO</a>
+          <a href="../services.html#social">Social Media</a>
+          <a href="../services.html#branding">Branding</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../work.html">Our Work</a>
+          <a href="../about.html">About</a>
+          <a href="index.html">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:hello@takeholdmedia.com">hello@takeholdmedia.com</a>
+          <a href="tel:3212741108">321.274.1108</a>
+          <a href="../contact.html">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TakeHold Media · DBA TMB Holdings · All rights reserved</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
