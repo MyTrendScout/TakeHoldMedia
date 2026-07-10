@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Your Business Isn't Showing Up on Google (And What to Fix First) | TakeHold Media</title>
+  <meta name="description" content="Not showing up on Google? Here are the 5 most common reasons local businesses stay invisible online — and what to fix first to start getting found." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    /* ── Article Hero ── */
+    .article-hero {
+      padding: 9rem 0 4rem;
+      background: var(--offwhite);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--taupe) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .article-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--light);
+      margin-bottom: 1.5rem;
+    }
+    .article-breadcrumb a { color: var(--teal); transition: color 0.2s; }
+    .article-breadcrumb a:hover { color: var(--navy); }
+    .article-breadcrumb .sep { color: var(--taupe); }
+    .article-cat {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(47,110,111,0.1);
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--light);
+    }
+    .article-meta .dot { color: var(--taupe); }
+    .article-hero-img {
+      margin-top: 3rem;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 420px;
+    }
+    .article-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Article Body ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 5rem;
+      padding: 5rem 0 6rem;
+      align-items: start;
+    }
+    .article-prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin: 2.8rem 0 0.8rem;
+      line-height: 1.3;
+    }
+    .article-prose h2:first-child { margin-top: 0; }
+    .article-prose p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose ul {
+      list-style: none;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .article-prose ul li {
+      font-size: 0.97rem;
+      color: var(--mid);
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .article-prose ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .article-prose .callout {
+      background: var(--offwhite);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .callout p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--navy);
+    }
+    .article-prose .step-block {
+      background: var(--white);
+      border: 1px solid var(--taupe);
+      border-radius: 10px;
+      padding: 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .step-block ol {
+      list-style: none;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 0;
+    }
+    .article-prose .step-block ol li {
+      counter-increment: steps;
+      padding-left: 2.2rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .article-prose .step-block ol li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+    }
+    .article-prose hr {
+      border: none;
+      border-top: 1px solid var(--taupe);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-cta {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .sidebar-cta-anchor {
+      position: absolute;
+      right: -15px;
+      bottom: -10px;
+      font-size: 8rem;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+    .sidebar-cta h4 {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta .btn { width: 100%; justify-content: center; position: relative; z-index: 1; }
+    .sidebar-related h5 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1.2rem;
+    }
+    .sidebar-related a {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--taupe);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .sidebar-related a:hover { color: var(--teal); }
+    .sidebar-related a:last-child { border-bottom: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .article-sidebar { position: static; }
+      .article-hero-img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="always-light" id="nav">
+    <a href="../index.html" class="wordmark">
+      <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+      <span class="wordmark-line2">Media</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../work.html">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../contact.html" class="btn-nav">Get Started</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── Article Hero ── -->
+  <section class="article-hero">
+    <div class="hero-dots"></div>
+    <div class="container">
+      <div class="article-hero-inner">
+        <div class="article-breadcrumb">
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <span>SEO</span>
+        </div>
+        <span class="article-cat">SEO</span>
+        <h1>Why Your Business Isn't Showing Up on Google (And What to Fix First)</h1>
+        <div class="article-meta">
+          <span>July 2026</span>
+          <span class="dot">·</span>
+          <span>7 min read</span>
+          <span class="dot">·</span>
+          <span>TakeHold Media</span>
+        </div>
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&auto=format&fit=crop" alt="Google search visibility for local businesses" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Article Body ── -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Main Content -->
+        <div class="article-prose">
+
+          <p>You built the business. You have customers who love you. You do good work.</p>
+
+          <p>And still, when someone searches for what you do in your city, your name doesn't appear.</p>
+
+          <p>It's one of the most frustrating problems a small business can have — because it's invisible. Your phone isn't ringing from people who don't know you exist, so you don't even feel the loss. You just notice that growth is slower than it should be, and word-of-mouth can only stretch so far.</p>
+
+          <p>Here's the thing: this problem is almost always fixable. And it usually comes down to one of five causes.</p>
+
+          <hr />
+
+          <h2>1. Your Google Business Profile Is Missing or Incomplete</h2>
+
+          <p>This is the most common reason local businesses don't show up — and the easiest to fix.</p>
+
+          <p>Google Business Profile (formerly Google My Business) is the listing that appears in local search results and on Google Maps. When someone searches "plumber near me" or "web designer in Orlando," Google shows a map with three businesses highlighted. That's the Local Pack. Getting into it starts with having a complete, verified GBP.</p>
+
+          <p>If you haven't claimed your listing, Google may have created a generic one automatically — with wrong information, no photos, and no way for anyone to contact you. Or you may not have a listing at all.</p>
+
+          <div class="callout">
+            <p><strong>What to check:</strong> Search your business name on Google. Does a profile appear on the right side of the results? If yes — is the information accurate? Phone number, address, website, hours? If no — go to business.google.com and claim or create your listing.</p>
+          </div>
+
+          <p>A fully optimized GBP — complete with services, photos, a compelling description, and regular posts — is the single highest-return action most local businesses can take.</p>
+
+          <hr />
+
+          <h2>2. Your Website Is Slow or Not Mobile-Friendly</h2>
+
+          <p>Google doesn't just rank websites — it ranks <em>experiences</em>. If your site takes more than 3 seconds to load, or doesn't display properly on a phone, Google knows. And it pushes you down the results accordingly.</p>
+
+          <p>This matters more now than it ever has. Over 60% of local searches happen on mobile. If someone finds your site on their phone and it loads slowly or breaks the layout, they leave. Google tracks that. It's called bounce rate, and a high one signals that your site isn't useful — which means lower rankings.</p>
+
+          <div class="callout">
+            <p><strong>What to check:</strong> Go to PageSpeed Insights (pagespeed.web.dev) and run your URL. A score under 50 on mobile is a problem. Pull up your site on your phone — does it display cleanly? Can you tap the menu and read the text without zooming?</p>
+          </div>
+
+          <p>Speed and mobile performance are technical fixes — often requiring someone to get into the code — but the impact on rankings is immediate and significant.</p>
+
+          <hr />
+
+          <h2>3. Your Website Has No Local Signals</h2>
+
+          <p>Google needs to understand <em>where</em> you are and <em>what</em> you do. If your website doesn't clearly state your city, your service area, and your specific services — in plain text that Google can read — it won't know to show you for local searches.</p>
+
+          <p>This sounds obvious, but most small business websites are built around what the owner thinks looks good, not what Google needs to see. Generic headlines like "Welcome to Our Website" tell Google nothing. A heading that says "Custom Website Design for Small Businesses in Orlando, Florida" tells Google everything.</p>
+
+          <div class="callout">
+            <p><strong>What to check:</strong> Does your homepage mention your city by name? Does your title tag (the text in the browser tab) include your city and your primary service? Do your service pages use the language your customers actually search for?</p>
+          </div>
+
+          <p>On-page SEO doesn't require a technical background to understand — but it does require intentional writing and structure. Every page on your site should be built around a specific keyword and geographic signal.</p>
+
+          <hr />
+
+          <h2>4. You Have No Reviews — or You're Not Responding to Them</h2>
+
+          <p>Reviews are a ranking signal. Not just for social proof — Google literally uses the quantity, recency, and quality of your reviews to decide how prominently to show your business.</p>
+
+          <p>A business with 3 reviews from two years ago will consistently rank below a competitor with 47 reviews from the last six months, even if the services are equivalent. Google reads reviews as a proxy for business activity and customer satisfaction.</p>
+
+          <p>Responding to reviews matters too. Businesses that engage with reviewers — both positive and negative — signal to Google that they're active and accountable.</p>
+
+          <div class="callout">
+            <p><strong>What to do:</strong> Ask every satisfied customer for a Google review. Make it easy — send them a direct link. Respond to every review within a week. Aim for at least one new review per month, consistently.</p>
+          </div>
+
+          <p>This is one of those things that feels small and then compounds dramatically over time.</p>
+
+          <hr />
+
+          <h2>5. Your NAP Is Inconsistent Across the Web</h2>
+
+          <p>NAP stands for Name, Address, Phone number. Google cross-references your business information across dozens of directories — Yelp, Yellow Pages, Bing, Apple Maps, local chamber of commerce sites, and more.</p>
+
+          <p>If your business name is listed differently in different places — "TakeHold Media" in one spot, "Take Hold Media LLC" in another — Google gets confused. It's not sure whether these are the same business. That uncertainty hurts your rankings.</p>
+
+          <div class="callout">
+            <p><strong>What to check:</strong> Search your business name and phone number together. What comes up? Are there old listings with wrong addresses or phone numbers? Is your current information consistent everywhere?</p>
+          </div>
+
+          <p>Cleaning up citations (what these directory listings are called) is tedious but impactful. It's often one of the first things we do when taking on a new local SEO client.</p>
+
+          <hr />
+
+          <h2>Where to Start</h2>
+
+          <p>You don't have to fix all five at once. Priority order:</p>
+
+          <div class="step-block">
+            <ol>
+              <li><strong>Claim and complete your Google Business Profile</strong> — if you do nothing else, do this.</li>
+              <li><strong>Fix your website's mobile experience and speed</strong> — test it on your phone today.</li>
+              <li><strong>Add your city and services to your homepage</strong> — rewrite the headline if you have to.</li>
+              <li><strong>Send five past customers a direct link and ask for a review</strong> — this week.</li>
+              <li><strong>Search your business name and clean up any wrong listings</strong> you find.</li>
+            </ol>
+          </div>
+
+          <p>Each one moves the needle. All five together, maintained consistently, is what moves you from invisible to in-front-of-the-right-people.</p>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-anchor"><i class="ti ti-anchor"></i></div>
+            <h4>Not sure where to start?</h4>
+            <p>We'll tell you exactly what's holding you back — in one free call. No pitch, just clarity.</p>
+            <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+          </div>
+          <div class="sidebar-related">
+            <h5>More from the blog</h5>
+            <a href="custom-website-vs-template.html">Custom Website vs. Template: What Nobody Tells You</a>
+            <a href="index.html">Browse all articles →</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Strip ── -->
+  <section class="cta-strip">
+    <div class="cta-anchor-bg"><i class="ti ti-anchor"></i></div>
+    <div class="container" style="position:relative; z-index:1;">
+      <h2>Ready to get found?</h2>
+      <p>We handle all five of these for our SEO clients — Google Business Profile, site speed, on-page signals, reviews, and citation cleanup. One call and we'll show you where you stand.</p>
+      <div class="btn-actions">
+        <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+        <a href="../services.html#seo" class="btn btn-outline-white">See Our SEO Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="wordmark wordmark-white">
+            <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+            <span class="wordmark-line2">Media</span>
+          </a>
+          <p>Helping local and growing businesses anchor their brand online and hold their ground.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="../services.html#web">Website Design</a>
+          <a href="../services.html#seo">SEO</a>
+          <a href="../services.html#social">Social Media</a>
+          <a href="../services.html#branding">Branding</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../work.html">Our Work</a>
+          <a href="../about.html">About</a>
+          <a href="index.html">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:hello@takeholdmedia.com">hello@takeholdmedia.com</a>
+          <a href="tel:3212741108">321.274.1108</a>
+          <a href="../contact.html">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TakeHold Media · DBA TMB Holdings · All rights reserved</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Website vs. Template: What Nobody Tells You | TakeHold Media</title>
+  <meta name="description" content="Templates aren't always wrong. Custom isn't always necessary. Here's an honest breakdown of when each makes sense — and what it costs you when you choose wrong." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    /* ── Article Hero ── */
+    .article-hero {
+      padding: 9rem 0 4rem;
+      background: var(--offwhite);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--taupe) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .article-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--light);
+      margin-bottom: 1.5rem;
+    }
+    .article-breadcrumb a { color: var(--teal); transition: color 0.2s; }
+    .article-breadcrumb a:hover { color: var(--navy); }
+    .article-breadcrumb .sep { color: var(--taupe); }
+    .article-cat {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(47,110,111,0.1);
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--light);
+    }
+    .article-meta .dot { color: var(--taupe); }
+    .article-hero-img {
+      margin-top: 3rem;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 420px;
+    }
+    .article-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Article Body ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 5rem;
+      padding: 5rem 0 6rem;
+      align-items: start;
+    }
+    .article-prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin: 2.8rem 0 0.8rem;
+      line-height: 1.3;
+    }
+    .article-prose h2:first-child { margin-top: 0; }
+    .article-prose p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { font-style: italic; }
+    .article-prose ul {
+      list-style: none;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .article-prose ul li {
+      font-size: 0.97rem;
+      color: var(--mid);
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .article-prose ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .article-prose .callout {
+      background: var(--offwhite);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .callout p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--navy);
+    }
+    .article-prose hr {
+      border: none;
+      border-top: 1px solid var(--taupe);
+      margin: 2.5rem 0;
+    }
+
+    /* Comparison table */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--taupe);
+    }
+    .compare-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 0.9rem 1.2rem;
+      text-align: left;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .compare-table th:first-child { width: 35%; }
+    .compare-table td {
+      padding: 0.85rem 1.2rem;
+      border-bottom: 1px solid var(--taupe);
+      color: var(--mid);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: var(--offwhite); }
+    .compare-table td:first-child { font-weight: 600; color: var(--navy); font-size: 0.85rem; }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-cta {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .sidebar-cta-anchor {
+      position: absolute;
+      right: -15px;
+      bottom: -10px;
+      font-size: 8rem;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+    .sidebar-cta h4 {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta .btn { width: 100%; justify-content: center; position: relative; z-index: 1; }
+    .sidebar-related h5 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1.2rem;
+    }
+    .sidebar-related a {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--taupe);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .sidebar-related a:hover { color: var(--teal); }
+    .sidebar-related a:last-child { border-bottom: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .article-sidebar { position: static; }
+      .article-hero-img { height: 260px; }
+      .compare-table { font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="always-light" id="nav">
+    <a href="../index.html" class="wordmark">
+      <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+      <span class="wordmark-line2">Media</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../work.html">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../contact.html" class="btn-nav">Get Started</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── Article Hero ── -->
+  <section class="article-hero">
+    <div class="hero-dots"></div>
+    <div class="container">
+      <div class="article-hero-inner">
+        <div class="article-breadcrumb">
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <span>Web Design</span>
+        </div>
+        <span class="article-cat">Web Design</span>
+        <h1>Custom Website vs. Template: What Nobody Tells You</h1>
+        <div class="article-meta">
+          <span>July 2026</span>
+          <span class="dot">·</span>
+          <span>8 min read</span>
+          <span class="dot">·</span>
+          <span>TakeHold Media</span>
+        </div>
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200&auto=format&fit=crop" alt="Custom web design vs template comparison" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Article Body ── -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Main Content -->
+        <div class="article-prose">
+
+          <p>Most web design debates start with a conclusion and work backward. Agencies selling custom sites tell you templates are garbage. Template platforms tell you custom is a waste of money. Neither is completely honest.</p>
+
+          <p>Here's a straight answer.</p>
+
+          <hr />
+
+          <h2>What "Template" Actually Means</h2>
+
+          <p>When people say template website, they usually mean one of two things:</p>
+
+          <p><strong>1. A DIY platform site</strong> — built on Wix, Squarespace, or WordPress with a pre-made theme you customize yourself. You drag blocks, change colors, swap photos. No developer needed.</p>
+
+          <p><strong>2. A templated agency site</strong> — built by an agency using a page builder like Elementor or Divi, or a platform like Webflow with a starter template. The agency does the work, but the bones are pre-built.</p>
+
+          <p>Both approaches are faster and cheaper than building from scratch. And for the right situation, that's fine.</p>
+
+          <hr />
+
+          <h2>When a Template Is Fine</h2>
+
+          <p>Let's be honest. A template is a reasonable choice if:</p>
+
+          <p><strong>You're just getting started.</strong> If you have a new business and you're not sure yet what your customers want, what your messaging should be, or whether this is even going to work — a Squarespace site for $20/month is a smart way to have something live while you figure it out. Don't over-invest in infrastructure you might change in six months.</p>
+
+          <p><strong>Your business is genuinely simple.</strong> If you're a solo contractor and your website needs to do exactly three things — say what you do, show your phone number, and have a contact form — a template handles all three. No shame in that.</p>
+
+          <p><strong>Budget is the hard constraint.</strong> A $500 template site beats no site. If the choice is between a template and nothing, build the template, get it live, and plan to grow past it later.</p>
+
+          <hr />
+
+          <h2>Where Templates Quietly Cost You</h2>
+
+          <p>Here's what the template platforms don't tell you.</p>
+
+          <p><strong>Speed.</strong> Most template sites are slow. Page builders load dozens of unnecessary scripts. Pre-made themes include code for features you're not using. That bloat slows your site — and Google ranks slower sites lower. A custom site built cleanly can load in under a second. A templated site with a few plugins and a page builder often takes 4–6 seconds. That difference is measurable in rankings and in people bouncing before they read a word.</p>
+
+          <p><strong>Flexibility.</strong> Templates are designed to work for everyone, which means they're optimized for no one. Want your services page to work a specific way? Your portfolio to filter by category? On a template, you're either stuck with what the theme offers, or you're installing plugins that slow everything down further.</p>
+
+          <p><strong>Brand differentiation.</strong> Templates are sold to thousands of businesses. Your competitor in the next city may be running the same theme with different colors. When your website looks like everyone else's, you lose the visual trust that's supposed to distinguish you.</p>
+
+          <p><strong>SEO control.</strong> Custom-built sites can be structured with SEO in mind from the foundation — clean code, proper heading hierarchy, schema markup, fast load times. Templates make this harder. Some SEO signals are buried in platform settings. Others simply aren't accessible without code.</p>
+
+          <p><strong>Long-term cost.</strong> The hidden cost of a template is what you spend managing it. Plugins that break after updates. Theme conflicts. Security vulnerabilities in outdated code. The monthly platform fee that goes up every year. A well-built custom site, properly maintained, often costs less over three years than a template site with ongoing patching and fees.</p>
+
+          <hr />
+
+          <h2>What "Custom" Actually Means (When Done Right)</h2>
+
+          <p>A custom website, built correctly, is hand-coded from scratch. HTML, CSS, JavaScript — written specifically for your business, your goals, and your content. Nothing in the code that isn't there for a reason.</p>
+
+          <p>That means:</p>
+
+          <ul>
+            <li><strong>Fast.</strong> No bloat. No unnecessary scripts. Built to load in under a second.</li>
+            <li><strong>Flexible.</strong> Every layout, interaction, and feature is designed around how your business actually works.</li>
+            <li><strong>SEO-ready from day one.</strong> Schema markup, proper heading structure, meta tags, performance optimization — built in, not bolted on.</li>
+            <li><strong>Yours.</strong> When you own the code, you're not paying a platform monthly to exist. You host it where you want. You move it if you need to. No lock-in.</li>
+          </ul>
+
+          <p>The tradeoff is time and money upfront. A well-built custom site takes 3–6 weeks and costs more than a template. That investment makes sense when:</p>
+
+          <ul>
+            <li>Your brand and positioning are established and you need a site that reflects them accurately</li>
+            <li>You're in a competitive market where speed and SEO performance directly affect whether you get found</li>
+            <li>You're running active lead generation and need a site that converts, not just looks decent</li>
+            <li>You've already tried a template and it's clearly not cutting it</li>
+          </ul>
+
+          <hr />
+
+          <h2>The Honest Decision Framework</h2>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Template</th>
+                <th>Custom</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Timeline</td>
+                <td>Days to weeks</td>
+                <td>3–6 weeks</td>
+              </tr>
+              <tr>
+                <td>Cost upfront</td>
+                <td>Low ($0–$3K)</td>
+                <td>Higher ($5K–$20K+)</td>
+              </tr>
+              <tr>
+                <td>Speed</td>
+                <td>Usually slow</td>
+                <td>Fast when built right</td>
+              </tr>
+              <tr>
+                <td>SEO control</td>
+                <td>Limited</td>
+                <td>Full</td>
+              </tr>
+              <tr>
+                <td>Flexibility</td>
+                <td>Constrained by theme</td>
+                <td>Built to spec</td>
+              </tr>
+              <tr>
+                <td>Long-term cost</td>
+                <td>Platform fees + maintenance</td>
+                <td>Hosting + maintenance</td>
+              </tr>
+              <tr>
+                <td>Right for</td>
+                <td>Early-stage, simple sites, tight budgets</td>
+                <td>Established brands, competitive markets, conversion focus</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Neither column is wrong. The wrong choice is using a template when you need a custom site, or spending on custom when a template would do the job.</p>
+
+          <hr />
+
+          <h2>One Question That Clarifies It</h2>
+
+          <p>Ask yourself: <strong>Is my website currently costing me business?</strong></p>
+
+          <p>If the answer is yes — slow load times, poor rankings, low conversion, doesn't look credible — then a template isn't the problem. The approach is the problem. That's when custom becomes the right investment.</p>
+
+          <p>If the answer is no, and your site is working reasonably well — keep what's working and invest your money in driving traffic to it instead.</p>
+
+          <div class="callout">
+            <p><strong>Worth knowing:</strong> Every site TakeHold Media builds is hand-coded from scratch. No page builders. No templates. If you're curious what that looks like in practice — on real sites built for real clients — <a href="../work.html" style="color:var(--teal); font-weight:600;">browse our work.</a></p>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-anchor"><i class="ti ti-anchor"></i></div>
+            <h4>Want to see custom in action?</h4>
+            <p>20 minutes and we'll tell you exactly what your current site is costing you — and what we'd build instead.</p>
+            <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+          </div>
+          <div class="sidebar-related">
+            <h5>More from the blog</h5>
+            <a href="why-your-business-isnt-showing-up-on-google.html">Why Your Business Isn't Showing Up on Google</a>
+            <a href="index.html">Browse all articles →</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Strip ── -->
+  <section class="cta-strip">
+    <div class="cta-anchor-bg"><i class="ti ti-anchor"></i></div>
+    <div class="container" style="position:relative; z-index:1;">
+      <h2>See what hand-coded looks like.</h2>
+      <p>Every site we build is custom, from scratch, built to perform. Browse our client work — then let's talk about what we'd build for you.</p>
+      <div class="btn-actions">
+        <a href="../work.html" class="btn btn-primary">See Our Work <i class="ti ti-arrow-right"></i></a>
+        <a href="../contact.html" class="btn btn-outline-white">Schedule a Free Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="wordmark wordmark-white">
+            <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+            <span class="wordmark-line2">Media</span>
+          </a>
+          <p>Helping local and growing businesses anchor their brand online and hold their ground.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="../services.html#web">Website Design</a>
+          <a href="../services.html#seo">SEO</a>
+          <a href="../services.html#social">Social Media</a>
+          <a href="../services.html#branding">Branding</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../work.html">Our Work</a>
+          <a href="../about.html">About</a>
+          <a href="index.html">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:hello@takeholdmedia.com">hello@takeholdmedia.com</a>
+          <a href="tel:3212741108">321.274.1108</a>
+          <a href="../contact.html">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TakeHold Media · DBA TMB Holdings · All rights reserved</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
