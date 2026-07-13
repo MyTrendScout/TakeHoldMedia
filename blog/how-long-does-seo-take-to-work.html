@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Long Does SEO Actually Take? (Real Numbers, No Hype) | TakeHold Media</title>
+  <meta name="description" content="Honest SEO timelines for small businesses — 3 months for early signals, 6 months for real movement, 12 months for compounding results. Here's what to actually expect." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    /* ── Article Hero ── */
+    .article-hero {
+      padding: 9rem 0 4rem;
+      background: var(--offwhite);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--taupe) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .article-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--light);
+      margin-bottom: 1.5rem;
+    }
+    .article-breadcrumb a { color: var(--teal); transition: color 0.2s; }
+    .article-breadcrumb a:hover { color: var(--navy); }
+    .article-breadcrumb .sep { color: var(--taupe); }
+    .article-cat {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(47,110,111,0.1);
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--light);
+    }
+    .article-meta .dot { color: var(--taupe); }
+    .article-hero-img {
+      margin-top: 3rem;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 420px;
+    }
+    .article-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Article Body ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 5rem;
+      padding: 5rem 0 6rem;
+      align-items: start;
+    }
+    .article-prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin: 2.8rem 0 0.8rem;
+      line-height: 1.3;
+    }
+    .article-prose h2:first-child { margin-top: 0; }
+    .article-prose p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose ul {
+      list-style: none;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .article-prose ul li {
+      font-size: 0.97rem;
+      color: var(--mid);
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .article-prose ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .article-prose .callout {
+      background: var(--offwhite);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .callout p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--navy);
+    }
+    .article-prose .step-block {
+      background: var(--white);
+      border: 1px solid var(--taupe);
+      border-radius: 10px;
+      padding: 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .step-block ol {
+      list-style: none;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 0;
+    }
+    .article-prose .step-block ol li {
+      counter-increment: steps;
+      padding-left: 2.2rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .article-prose .step-block ol li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+    }
+    .article-prose hr {
+      border: none;
+      border-top: 1px solid var(--taupe);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-cta {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .sidebar-cta-anchor {
+      position: absolute;
+      right: -15px;
+      bottom: -10px;
+      font-size: 8rem;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+    .sidebar-cta h4 {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta .btn { width: 100%; justify-content: center; position: relative; z-index: 1; }
+    .sidebar-related h5 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1.2rem;
+    }
+    .sidebar-related a {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--taupe);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .sidebar-related a:hover { color: var(--teal); }
+    .sidebar-related a:last-child { border-bottom: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .article-sidebar { position: static; }
+      .article-hero-img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="always-light" id="nav">
+    <a href="../index.html" class="wordmark">
+      <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+      <span class="wordmark-line2">Media</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../work.html">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../contact.html" class="btn-nav">Get Started</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── Article Hero ── -->
+  <section class="article-hero">
+    <div class="hero-dots"></div>
+    <div class="container">
+      <div class="article-hero-inner">
+        <div class="article-breadcrumb">
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <span>SEO</span>
+        </div>
+        <span class="article-cat">SEO</span>
+        <h1>How Long Does SEO Actually Take? (Real Numbers, No Hype)</h1>
+        <div class="article-meta">
+          <span>July 2026</span>
+          <span class="dot">·</span>
+          <span>6 min read</span>
+          <span class="dot">·</span>
+          <span>TakeHold Media</span>
+        </div>
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1200&auto=format&fit=crop" alt="SEO timeline for small business" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Article Body ── -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Main Content -->
+        <div class="article-prose">
+
+          <p>This is the question every small business owner asks before signing an SEO contract. And most agencies dodge it with something like "it depends" — which is technically true but completely useless.</p>
+
+          <p>Here's the real answer: SEO takes 3 to 12 months to show meaningful results, and most businesses who "tried SEO and it didn't work" quit somewhere in month 2 or 3. That's exactly when the work is happening underground, before it surfaces in rankings.</p>
+
+          <p>This article breaks down what actually happens at each stage — so you know what to expect, what to watch for, and when to start asking hard questions.</p>
+
+          <hr />
+
+          <h2>Why SEO Takes Time at All</h2>
+
+          <p>Search engines don't react in real time. Google is constantly crawling billions of pages, evaluating them against hundreds of signals, and updating its index. When you make a change to your website or earn a new backlink, Google has to find it, process it, and decide what it means for your ranking. That takes time.</p>
+
+          <p>Beyond crawling, SEO is fundamentally about building trust. Google ranks websites it trusts — sites that have been around, have consistent information across the web, earn links from reputable sources, and demonstrate steady user engagement. Trust accumulates slowly. There's no shortcut to it.</p>
+
+          <div class="callout">
+            <p><strong>The analogy that actually holds:</strong> SEO is closer to building a reputation than running an ad. You can buy an ad today and see traffic tomorrow. A reputation takes months of consistent behavior — and pays off far longer than any single campaign.</p>
+          </div>
+
+          <p>That said, the timeline isn't random. Here's what to expect at each phase.</p>
+
+          <hr />
+
+          <h2>Months 1–3: Groundwork and Early Signals</h2>
+
+          <p>The first three months are mostly invisible to you, but a lot is happening.</p>
+
+          <p>In month one, a good SEO team audits your current site, fixes technical issues (broken links, slow load times, missing meta tags, mobile problems), and sets up or optimizes your Google Business Profile. They're also building the keyword map — figuring out exactly which terms your customers search and which ones your site has any realistic shot at ranking for.</p>
+
+          <p>In months two and three, the on-page work starts: rewriting page titles and descriptions, updating headings to include local keywords, improving page structure, and sometimes adding new content. If local citations are inconsistent — your business name or address listed differently across Yelp, Apple Maps, and directories — that gets cleaned up too.</p>
+
+          <div class="callout">
+            <p><strong>What you might see:</strong> Small movement on long-tail or low-competition keywords. Google Search Console showing your pages indexed for new terms. Your GBP starting to appear in more local searches. Rankings are often still low — but they're moving.</p>
+          </div>
+
+          <p>This phase tests patience. The work is real. The results are just not visible yet.</p>
+
+          <hr />
+
+          <h2>Months 4–6: Real Movement Begins</h2>
+
+          <p>This is when things start to become visible.</p>
+
+          <p>By month four, Google has had time to fully re-index your improved pages. The technical fixes are working. The keyword-optimized content is being evaluated. If you've been consistently earning reviews on your GBP, that's compounding too. You'll typically start seeing rankings move from page 3 or 4 into page 2, or from the bottom of page 1 into the middle.</p>
+
+          <p>For local businesses, this is also when the Local Pack — the map results that show up above the organic listings — becomes more attainable. Getting into that three-pack is often the biggest single traffic driver for local businesses, and it requires a combination of GBP optimization, reviews, proximity signals, and website authority that usually takes four to six months to build.</p>
+
+          <div class="callout">
+            <p><strong>What you might see:</strong> A measurable increase in impressions and clicks in Google Search Console. Your business appearing in the Local Pack for some searches. Phone calls or form submissions that you can trace back to organic search. These are the signals that tell you the investment is working.</p>
+          </div>
+
+          <p>Month six is also a good checkpoint. If you've been working with an agency and can't point to any of the above, it's fair to ask for an explanation.</p>
+
+          <hr />
+
+          <h2>Months 7–12: Compounding Returns</h2>
+
+          <p>This is where SEO stops feeling like a cost and starts feeling like an asset.</p>
+
+          <p>The rankings you earned in months four through six don't disappear — they grow. Each piece of content that ranks starts pulling in traffic. Each new review strengthens your GBP authority. Each backlink adds to your domain's credibility. The work done in month one keeps paying off in month ten.</p>
+
+          <p>By month twelve, a well-executed local SEO campaign typically produces consistent, measurable organic traffic — the kind that doesn't stop when you cut the budget. You've built something that belongs to you.</p>
+
+          <div class="step-block">
+            <ol>
+              <li><strong>Month 1–2:</strong> Technical cleanup, GBP optimization, keyword mapping</li>
+              <li><strong>Month 3–4:</strong> On-page content updates, citation cleanup, early indexing</li>
+              <li><strong>Month 4–6:</strong> Rankings begin to move, Local Pack visibility increases</li>
+              <li><strong>Month 6–9:</strong> Consistent organic traffic, measurable leads from search</li>
+              <li><strong>Month 9–12:</strong> Compounding results — content and authority built earlier continues to deliver</li>
+            </ol>
+          </div>
+
+          <hr />
+
+          <h2>Why Most Businesses Quit Too Early</h2>
+
+          <p>The number one reason SEO "doesn't work" for small businesses is that they stop before the payoff.</p>
+
+          <p>It's understandable. You're paying monthly. You're not seeing results in month two. Someone offers you a cheaper alternative, or you decide the money is better spent on ads. So you stop. And then six months later, you watch a competitor — who kept going — show up on the first page for every keyword that matters to you.</p>
+
+          <p>SEO has a delayed gratification problem. The businesses that win are the ones willing to treat it like a 12-month investment, not a 60-day trial.</p>
+
+          <div class="callout">
+            <p><strong>A useful comparison:</strong> Google Ads gives you traffic the day you turn it on — and stops the day you turn it off. SEO builds a foundation that keeps delivering. Both have a place, but they're not the same tool. If you need leads this month, start with ads. If you want to own your category in your city by next year, start SEO now.</p>
+          </div>
+
+          <hr />
+
+          <h2>Red Flags That Should Concern You</h2>
+
+          <p>Not all slow results mean good work happening in the background. There are a few warning signs that mean something is genuinely wrong — not just slow.</p>
+
+          <ul>
+            <li>No progress in Google Search Console after four months (impressions, clicks, indexed pages)</li>
+            <li>Agency can't show you what work was done in any given month</li>
+            <li>They promised first-page rankings in 30 days — that's not how this works</li>
+            <li>You don't have access to your own GBP, Analytics, or Search Console</li>
+            <li>Rankings are moving on keywords nobody searches (vanity wins, not real traffic)</li>
+          </ul>
+
+          <p>Patience is required for real SEO. Blind trust is not. You should be getting monthly reports that show exactly what was done, what moved, and what's next. If you're not getting that, ask for it — or find an agency that provides it by default.</p>
+
+          <hr />
+
+          <h2>The Bottom Line</h2>
+
+          <p>SEO takes time because building trust takes time. Three months for early signals. Six months for real movement. Twelve months for the kind of compounding results that make it one of the highest-ROI marketing channels a local business can invest in.</p>
+
+          <p>The businesses that see results aren't the ones who found a faster agency. They're the ones who started sooner and stayed consistent.</p>
+
+          <p>If you want to understand how this applies to your specific situation — what you'd realistically rank for, how competitive your market is, and what a 12-month timeline might look like — <a href="../contact.html">one conversation is enough to give you a clear picture</a>. We don't promise overnight results. We do promise to still be here in month 12.</p>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-anchor"><i class="ti ti-anchor"></i></div>
+            <h4>Ready to start building?</h4>
+            <p>One call is enough to show you where you stand and what a realistic SEO timeline looks like for your business.</p>
+            <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+          </div>
+          <div class="sidebar-related">
+            <h5>More from the blog</h5>
+            <a href="local-seo-checklist-for-small-businesses.html">The Local SEO Checklist Every Small Business Should Run Once a Year</a>
+            <a href="why-your-business-isnt-showing-up-on-google.html">Why Your Business Isn't Showing Up on Google</a>
+            <a href="index.html">Browse all articles →</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Strip ── -->
+  <section class="cta-strip">
+    <div class="cta-anchor-bg"><i class="ti ti-anchor"></i></div>
+    <div class="container" style="position:relative; z-index:1;">
+      <h2>SEO that sticks around.</h2>
+      <p>We don't promise overnight results. We do promise consistent, transparent work — and to still be here in month 12. See how we approach SEO for local businesses in Orlando and beyond.</p>
+      <div class="btn-actions">
+        <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+        <a href="../services.html#seo" class="btn btn-outline-white">See Our SEO Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="wordmark wordmark-white">
+            <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+            <span class="wordmark-line2">Media</span>
+          </a>
+          <p>Helping local and growing businesses anchor their brand online and hold their ground.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="../services.html#web">Website Design</a>
+          <a href="../services.html#seo">SEO</a>
+          <a href="../services.html#social">Social Media</a>
+          <a href="../services.html#branding">Branding</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../work.html">Our Work</a>
+          <a href="../about.html">About</a>
+          <a href="index.html">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:hello@takeholdmedia.com">hello@takeholdmedia.com</a>
+          <a href="tel:3212741108">321.274.1108</a>
+          <a href="../contact.html">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TakeHold Media · DBA TMB Holdings · All rights reserved</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
