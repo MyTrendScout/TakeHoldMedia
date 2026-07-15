@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Optimize Your Google Business Profile (Step-by-Step for 2026) | TakeHold Media</title>
+  <meta name="description" content="A complete walkthrough of every Google Business Profile section — what a fully optimized listing looks like vs. the default, and exactly how to get there." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    /* ── Article Hero ── */
+    .article-hero {
+      padding: 9rem 0 4rem;
+      background: var(--offwhite);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--taupe) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .article-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--light);
+      margin-bottom: 1.5rem;
+    }
+    .article-breadcrumb a { color: var(--teal); transition: color 0.2s; }
+    .article-breadcrumb a:hover { color: var(--navy); }
+    .article-breadcrumb .sep { color: var(--taupe); }
+    .article-cat {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(47,110,111,0.1);
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--light);
+    }
+    .article-meta .dot { color: var(--taupe); }
+    .article-hero-img {
+      margin-top: 3rem;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 420px;
+    }
+    .article-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Article Body ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 5rem;
+      padding: 5rem 0 6rem;
+      align-items: start;
+    }
+    .article-prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin: 2.8rem 0 0.8rem;
+      line-height: 1.3;
+    }
+    .article-prose h2:first-child { margin-top: 0; }
+    .article-prose p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose ul {
+      list-style: none;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .article-prose ul li {
+      font-size: 0.97rem;
+      color: var(--mid);
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .article-prose ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .article-prose .callout {
+      background: var(--offwhite);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .callout p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--navy);
+    }
+    .article-prose .step-block {
+      background: var(--white);
+      border: 1px solid var(--taupe);
+      border-radius: 10px;
+      padding: 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .step-block ol {
+      list-style: none;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 0;
+    }
+    .article-prose .step-block ol li {
+      counter-increment: steps;
+      padding-left: 2.2rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .article-prose .step-block ol li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+    }
+    .article-prose hr {
+      border: none;
+      border-top: 1px solid var(--taupe);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-cta {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .sidebar-cta-anchor {
+      position: absolute;
+      right: -15px;
+      bottom: -10px;
+      font-size: 8rem;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+    .sidebar-cta h4 {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta .btn { width: 100%; justify-content: center; position: relative; z-index: 1; }
+    .sidebar-related h5 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1.2rem;
+    }
+    .sidebar-related a {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--taupe);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .sidebar-related a:hover { color: var(--teal); }
+    .sidebar-related a:last-child { border-bottom: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .article-sidebar { position: static; }
+      .article-hero-img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="always-light" id="nav">
+    <a href="../index.html" class="wordmark">
+      <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+      <span class="wordmark-line2">Media</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../work.html">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../contact.html" class="btn-nav">Get Started</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── Article Hero ── -->
+  <section class="article-hero">
+    <div class="hero-dots"></div>
+    <div class="container">
+      <div class="article-hero-inner">
+        <div class="article-breadcrumb">
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <span>SEO</span>
+        </div>
+        <span class="article-cat">SEO</span>
+        <h1>How to Optimize Your Google Business Profile (Step-by-Step for 2026)</h1>
+        <div class="article-meta">
+          <span>July 2026</span>
+          <span class="dot">·</span>
+          <span>7 min read</span>
+          <span class="dot">·</span>
+          <span>TakeHold Media</span>
+        </div>
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&auto=format&fit=crop" alt="Optimizing Google Business Profile for local search" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Article Body ── -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Main Content -->
+        <div class="article-prose">
+
+          <p>Most Google Business Profiles are set up once and forgotten. Name, address, phone number — maybe a few photos from years ago — and that's it. Then business owners wonder why they're not showing up in local search.</p>
+
+          <p>A default GBP is not the same thing as an optimized one. The gap between the two is significant — and closing it doesn't require any technical expertise. It just requires knowing what Google actually looks at.</p>
+
+          <p>Here's a section-by-section walkthrough of what fully optimized looks like.</p>
+
+          <hr />
+
+          <h2>Start Here: Claim and Verify Your Listing</h2>
+
+          <p>Before you can optimize anything, you have to own it. Go to <strong>business.google.com</strong> and search for your business. If a listing already exists — and Google may have created one automatically — claim it. If there's nothing there, create one from scratch.</p>
+
+          <p>Verification typically happens via postcard (Google mails a code to your business address), phone, or email. This step is non-negotiable. An unclaimed listing can have wrong information, missing photos, and zero ability for you to respond to reviews. Competitors can sometimes even suggest edits that change your details.</p>
+
+          <div class="callout">
+            <p><strong>What fully optimized looks like:</strong> Claimed, verified, and showing a green checkmark in your GBP dashboard. If you're managing multiple locations, each one should be claimed individually.</p>
+          </div>
+
+          <hr />
+
+          <h2>Business Name, Category, and Description</h2>
+
+          <p>Your business name on GBP should match your real-world name exactly. Not "Orlando Best Plumber" — just "Smith Plumbing." Google penalizes keyword-stuffing in business names, and it looks unprofessional to anyone who sees it.</p>
+
+          <p><strong>Primary category</strong> is one of the most important ranking signals in your entire profile. It tells Google what type of business you are, which determines which searches you're eligible to appear in. Choose the most specific option available. "Digital Marketing Agency" beats "Marketing Agency." "Dentist" beats "Health Care Provider."</p>
+
+          <p>You can also add secondary categories — these are useful when you offer distinct services. A company that does both web design and SEO might list both as categories.</p>
+
+          <p>Your <strong>business description</strong> gets 750 characters. Use them. Write naturally, mention your primary services, mention your city, and explain what makes your business different. Don't pack it with keywords — write for the person reading it, and the ranking benefit will follow.</p>
+
+          <div class="callout">
+            <p><strong>What default looks like:</strong> Business name entered once, primary category set to something broad, description left blank or copied from the website's "About" page with no local signals.</p>
+          </div>
+
+          <hr />
+
+          <h2>Address, Service Area, and Hours</h2>
+
+          <p>If customers come to you, your address should be visible. If you go to customers — or you operate from a home address you don't want public — you can hide the address and instead define a service area by city, county, or radius.</p>
+
+          <p>Service area matters for rankings. If you serve all of Central Florida, list it. Google uses service area data to decide whether to show you for searches in those locations.</p>
+
+          <p>Hours need to be accurate and kept current. Google shows when a business is open right in search results. A business listed as "closed" during business hours loses credibility instantly. Update your hours for holidays, and use the "More hours" feature if your phone hours differ from your walk-in hours.</p>
+
+          <div class="callout">
+            <p><strong>Common mistake:</strong> Leaving hours unset, or setting them once and never updating them for holidays. Google will sometimes pull incorrect hours from other sources if yours aren't kept current.</p>
+          </div>
+
+          <hr />
+
+          <h2>Phone Number and Website</h2>
+
+          <p>Use your primary business phone number — the same one that appears on your website and in any directories. Consistency across every platform (what's known as NAP consistency: Name, Address, Phone) is a ranking signal. If your GBP says one number and Yelp says another, Google notices the discrepancy.</p>
+
+          <p>Link to your actual website homepage, not a landing page or a scheduling tool. If you have a scheduling link you want people to use, that's what the "Appointment links" field is for.</p>
+
+          <hr />
+
+          <h2>Services and Products</h2>
+
+          <p>This section is underused by most businesses. GBP lets you list your specific services with names, descriptions, and prices (if applicable). Each service you list gives Google another signal about what you do — which means more searches you're potentially eligible to show up in.</p>
+
+          <p>Be specific. Instead of just "SEO," list "Local SEO," "Google Business Profile Optimization," and "Citation Building" as separate entries. Instead of just "Lawn Care," list "Lawn Mowing," "Fertilization," and "Sod Installation." The more specific you are, the more precisely Google can match you to the right searches.</p>
+
+          <div class="callout">
+            <p><strong>What fully optimized looks like:</strong> Every core service listed individually with a 2–3 sentence description. Products listed with photos if relevant. Prices included where they help set expectations.</p>
+          </div>
+
+          <hr />
+
+          <h2>Photos and Videos</h2>
+
+          <p>Businesses with photos get significantly more clicks and direction requests than businesses without them. This is not a small difference — Google's own data has consistently shown this for years.</p>
+
+          <p>What to upload: your storefront or office exterior (so people know what to look for), your team at work, examples of your work or products, and your logo. Videos should be under 30 seconds and show something real — a project walkthrough, a satisfied client, your process.</p>
+
+          <p>Avoid stock photos. Google can detect them, and customers definitely can. A real photo of your actual work beats a generic stock image every time.</p>
+
+          <p>Keep adding photos over time. Recency matters. A profile with 40 photos added three years ago performs worse than one with 20 photos added consistently over the past year.</p>
+
+          <hr />
+
+          <h2>Reviews: The Most Powerful Section You Can't Fully Control</h2>
+
+          <p>Reviews influence your local ranking more than almost any other factor. The number of reviews, how recent they are, and your average rating all feed into where Google places you in the Local Pack.</p>
+
+          <p>You can't write your own reviews — but you can systematically ask for them. Send every satisfied customer a direct link to your Google review page. Make it one click. Ask within 24–48 hours of a completed job, when the experience is fresh.</p>
+
+          <p>Respond to every review. Thank the positive ones by name if possible. Address the negative ones calmly and professionally — your response is as much for the next potential customer reading it as it is for the person who left the review.</p>
+
+          <div class="callout">
+            <p><strong>Aim for:</strong> A minimum of 10 reviews before you start running ads or making other marketing investments. Without reviews, traffic you drive to your profile has nothing to land on. At 25+ reviews with a 4.5+ average, you've built a foundation that does work for you passively.</p>
+          </div>
+
+          <hr />
+
+          <h2>Google Posts: The Feature Almost Nobody Uses</h2>
+
+          <p>GBP lets you publish posts directly on your profile — offers, updates, events, and announcements. These appear in search results when someone looks up your business. They expire after seven days (for most types), which means they require consistent upkeep.</p>
+
+          <p>Most businesses never touch this feature. That's an opportunity. A business that posts weekly signals to Google that it's active — and to customers that it's on top of things. Posts don't have a massive impact on rankings, but they contribute to overall profile completeness and engagement.</p>
+
+          <p>Keep posts short. One main point, a photo, and a link to your contact page or a relevant service page. Don't overthink it.</p>
+
+          <hr />
+
+          <h2>Q&amp;A: Answer Before Someone Else Does</h2>
+
+          <p>The Q&amp;A section lets anyone ask — and answer — questions about your business. That includes you, but it also includes random people on the internet.</p>
+
+          <p>Check this section regularly. If common questions aren't answered, add them yourself. Think about what your customers actually ask before hiring you, and answer those questions preemptively. This makes your profile more useful and reduces the chance someone answers a question about your business incorrectly.</p>
+
+          <hr />
+
+          <h2>A Completed Profile vs. a Maintained One</h2>
+
+          <p>There's a difference between a profile you fill out once and a profile you actively maintain. Google rewards businesses that stay current — new photos, new posts, fresh reviews, updated hours. A profile that's fully optimized today but untouched for a year will lose ground to a competitor who stays active.</p>
+
+          <div class="step-block">
+            <ol>
+              <li><strong>Claim and verify your listing</strong> at business.google.com — this is the prerequisite for everything else.</li>
+              <li><strong>Set your primary category</strong> as specifically as possible, then add relevant secondary categories.</li>
+              <li><strong>Complete every field</strong> — description, services, hours, website, phone — with accurate, consistent information.</li>
+              <li><strong>Upload at least 10 real photos</strong> of your business, team, and work. Add more every month.</li>
+              <li><strong>Ask every satisfied customer for a review</strong> and respond to every one you receive.</li>
+              <li><strong>Post an update once a week</strong> — offers, news, or a quick project highlight.</li>
+              <li><strong>Seed the Q&amp;A section</strong> with the questions your customers actually ask.</li>
+            </ol>
+          </div>
+
+          <p>This isn't a one-time project. It's a system. The businesses that dominate local search aren't doing anything exotic — they're doing these basics consistently, over time, while their competitors let their profiles go stale.</p>
+
+          <p>If you'd rather have someone else handle it, that's exactly what <a href="../services.html#seo">our local SEO package</a> includes. We optimize and manage GBP for clients as part of a broader local strategy — so the profile works even when you're focused on running your business.</p>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-anchor"><i class="ti ti-anchor"></i></div>
+            <h4>Want us to handle this?</h4>
+            <p>We optimize and manage Google Business Profiles for clients as part of our local SEO package. One call and we'll show you what's missing.</p>
+            <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+          </div>
+          <div class="sidebar-related">
+            <h5>More from the blog</h5>
+            <a href="local-seo-checklist-for-small-businesses.html">The Local SEO Checklist Every Small Business Should Run Once a Year</a>
+            <a href="why-your-business-isnt-showing-up-on-google.html">Why Your Business Isn't Showing Up on Google</a>
+            <a href="how-long-does-seo-take-to-work.html">How Long Does SEO Actually Take?</a>
+            <a href="index.html">Browse all articles →</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Strip ── -->
+  <section class="cta-strip">
+    <div class="cta-anchor-bg"><i class="ti ti-anchor"></i></div>
+    <div class="container" style="position:relative; z-index:1;">
+      <h2>Your GBP should be working harder than it is.</h2>
+      <p>We optimize and manage Google Business Profiles for local businesses as part of our <a href="../services.html#seo" style="color:var(--gold);">local SEO package</a>. If you want to know exactly what your profile is missing, one call will tell you.</p>
+      <div class="btn-actions">
+        <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+        <a href="../services.html#seo" class="btn btn-outline-white">See Our SEO Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="wordmark wordmark-white">
+            <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+            <span class="wordmark-line2">Media</span>
+          </a>
+          <p>Helping local and growing businesses anchor their brand online and hold their ground.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="../services.html#web">Website Design</a>
+          <a href="../services.html#seo">SEO</a>
+          <a href="../services.html#social">Social Media</a>
+          <a href="../services.html#branding">Branding</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../work.html">Our Work</a>
+          <a href="../about.html">About</a>
+          <a href="index.html">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:hello@takeholdmedia.com">hello@takeholdmedia.com</a>
+          <a href="tel:3212741108">321.274.1108</a>
+          <a href="../contact.html">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TakeHold Media · DBA TMB Holdings · All rights reserved</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
