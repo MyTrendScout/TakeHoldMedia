@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What to Look for in a Web Design Agency (Before You Sign Anything) | TakeHold Media</title>
+  <meta name="description" content="Hiring a web design agency? Here are the real red flags and green flags to watch for — so you pick the right partner before you sign a contract." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    /* ── Article Hero ── */
+    .article-hero {
+      padding: 9rem 0 4rem;
+      background: var(--offwhite);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--taupe) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .article-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--light);
+      margin-bottom: 1.5rem;
+    }
+    .article-breadcrumb a { color: var(--teal); transition: color 0.2s; }
+    .article-breadcrumb a:hover { color: var(--navy); }
+    .article-breadcrumb .sep { color: var(--taupe); }
+    .article-cat {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(47,110,111,0.1);
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--light);
+    }
+    .article-meta .dot { color: var(--taupe); }
+    .article-hero-img {
+      margin-top: 3rem;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 420px;
+    }
+    .article-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Article Body ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 5rem;
+      padding: 5rem 0 6rem;
+      align-items: start;
+    }
+    .article-prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin: 2.8rem 0 0.8rem;
+      line-height: 1.3;
+    }
+    .article-prose h2:first-child { margin-top: 0; }
+    .article-prose p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose ul {
+      list-style: none;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .article-prose ul li {
+      font-size: 0.97rem;
+      color: var(--mid);
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .article-prose ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .article-prose .callout {
+      background: var(--offwhite);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .callout p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--navy);
+    }
+    .article-prose .callout.red {
+      border-left-color: #c0392b;
+    }
+    .article-prose .callout.green {
+      border-left-color: var(--teal);
+    }
+    .article-prose .step-block {
+      background: var(--white);
+      border: 1px solid var(--taupe);
+      border-radius: 10px;
+      padding: 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .step-block ol {
+      list-style: none;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 0;
+    }
+    .article-prose .step-block ol li {
+      counter-increment: steps;
+      padding-left: 2.2rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .article-prose .step-block ol li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+    }
+    .article-prose hr {
+      border: none;
+      border-top: 1px solid var(--taupe);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-cta {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .sidebar-cta-anchor {
+      position: absolute;
+      right: -15px;
+      bottom: -10px;
+      font-size: 8rem;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+    .sidebar-cta h4 {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta .btn { width: 100%; justify-content: center; position: relative; z-index: 1; }
+    .sidebar-related h5 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1.2rem;
+    }
+    .sidebar-related a {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--taupe);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .sidebar-related a:hover { color: var(--teal); }
+    .sidebar-related a:last-child { border-bottom: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .article-sidebar { position: static; }
+      .article-hero-img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="always-light" id="nav">
+    <a href="../index.html" class="wordmark">
+      <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+      <span class="wordmark-line2">Media</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../work.html">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../contact.html" class="btn-nav">Get Started</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── Article Hero ── -->
+  <section class="article-hero">
+    <div class="hero-dots"></div>
+    <div class="container">
+      <div class="article-hero-inner">
+        <div class="article-breadcrumb">
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <span>Web Design</span>
+        </div>
+        <span class="article-cat">Web Design</span>
+        <h1>What to Look for in a Web Design Agency (Before You Sign Anything)</h1>
+        <div class="article-meta">
+          <span>July 2026</span>
+          <span class="dot">·</span>
+          <span>7 min read</span>
+          <span class="dot">·</span>
+          <span>TakeHold Media</span>
+        </div>
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&auto=format&fit=crop" alt="Team reviewing web design work together" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Article Body ── -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Main Content -->
+        <div class="article-prose">
+
+          <p>Hiring a web design agency is one of the bigger decisions a small business makes. Your website is the foundation of your digital presence. A bad one costs you more than what you paid to build it — it costs you every lead that bounces and every customer who can't find you.</p>
+
+          <p>The problem is that most agencies look roughly the same from the outside. Slick websites. Confident promises. Testimonials that could have been written by anyone. How do you tell the difference between an agency that will actually deliver and one that will leave you with a site you hate, a support inbox that goes unanswered, and a contract that's somehow already expired?</p>
+
+          <p>Here's what to actually look for — and what to run from.</p>
+
+          <hr />
+
+          <h2>Green Flag: They Show Their Work</h2>
+
+          <p>Any agency worth hiring has a portfolio. Not a list of client names — actual live websites you can visit and evaluate yourself. Click through the sites they've built. Are they fast? Do they work on your phone? Do they look like real businesses with clear messages, or do they look like pretty templates that say nothing?</p>
+
+          <p>Pay attention to variety, too. An agency that has built for dentists, restaurants, service businesses, and e-commerce shops understands that different businesses have different goals. That experience shows up in how they ask questions and how they approach your project.</p>
+
+          <div class="callout green">
+            <p><strong>What to ask:</strong> "Can you show me three recent sites you've built, and tell me what the client's goal was and how you approached it?" A good agency will answer this without hesitation. You can see <a href="../work.html">our work here</a> — and we're happy to walk you through any of it on a call.</p>
+          </div>
+
+          <hr />
+
+          <h2>Red Flag: No Clear Discovery Process</h2>
+
+          <p>If an agency gives you a quote after a 10-minute conversation, that's a problem.</p>
+
+          <p>A good web design engagement starts with questions — about your business model, your customers, your competitors, your current traffic, what's working and what isn't. This is called discovery, and it's the difference between a site built around what you actually need and a site built from a template with your logo dropped in.</p>
+
+          <p>You want an agency that wants to understand your business before they start designing anything. That understanding is what separates a website that converts from one that just exists.</p>
+
+          <div class="callout red">
+            <p><strong>Watch out for:</strong> Proposals that arrive before you've had a real conversation. Cookie-cutter pricing packages with no room for your specific situation. Agencies that talk more about their process than your problem.</p>
+          </div>
+
+          <hr />
+
+          <h2>Green Flag: They Talk About SEO from the Start</h2>
+
+          <p>Design and SEO aren't separate conversations. A beautiful website that no one can find on Google isn't doing its job. The best agencies build with search visibility in mind from day one — proper heading structure, fast loading, mobile performance, page titles, meta descriptions, and URL structure that makes sense.</p>
+
+          <p>If an agency presents you a proposal and SEO isn't mentioned until you bring it up — or is treated as a separate, optional add-on — that tells you something about how they think about websites. A site is a marketing tool. It needs to be built like one.</p>
+
+          <div class="callout green">
+            <p><strong>What to ask:</strong> "How do you handle on-page SEO during the build?" The answer should include specifics about site speed, mobile optimization, page structure, and at minimum a basic keyword strategy for your core pages.</p>
+          </div>
+
+          <hr />
+
+          <h2>Red Flag: Vague Timelines and No Project Management</h2>
+
+          <p>One of the most common complaints about web design agencies is that projects take far longer than promised. Weeks turn into months. You follow up and get vague updates. You're not sure who's working on your site, what's been completed, or when you'll see something.</p>
+
+          <p>Ask directly: how is the project managed? Who is your point of contact? What does the timeline look like, broken down by milestone? What happens if something runs long?</p>
+
+          <p>You should be able to get a clear answer. If you can't — if the response is "it depends" without any specifics — that's a preview of what working with them will feel like.</p>
+
+          <div class="callout red">
+            <p><strong>Watch out for:</strong> Agencies that won't commit to a launch window. Projects with no defined revision rounds. No defined point of contact — just a general email inbox. These are structures built for the agency's convenience, not yours.</p>
+          </div>
+
+          <hr />
+
+          <h2>Green Flag: They're Honest About What They Can't Do</h2>
+
+          <p>Good agencies know their lane. If they don't do e-commerce, they'll say so. If your project is outside their experience, they'll tell you rather than figure it out on your dime. If their timeline is full, they'll be upfront about it instead of overpromising and underdelivering.</p>
+
+          <p>Honesty is a skill. An agency that tells you something isn't a fit, or that your timeline is unrealistic, or that your budget won't get you what you're imagining — that agency is showing you something important about how they operate. They're not going to disappear when something gets hard.</p>
+
+          <div class="callout green">
+            <p><strong>What this looks like:</strong> Push back on your assumptions. Honest questions about whether your budget aligns with your goals. A willingness to refer you elsewhere if they're not the right fit. This is what working with professionals feels like.</p>
+          </div>
+
+          <hr />
+
+          <h2>Red Flag: No Conversation About What Happens After Launch</h2>
+
+          <p>A website is not a one-time project. It needs updates. Plugins break. Hosting needs management. Content needs to change as your business evolves. If an agency has never mentioned what happens after your site goes live, you need to ask.</p>
+
+          <p>Who maintains the site after launch? What does hosting cost and what's included? If something breaks on a Saturday, who do you call? What does a content update cost, and how long does it take?</p>
+
+          <p>Post-launch support isn't glamorous, but it's where agencies prove whether they actually care about your success or just about closing the contract. A well-built site with solid ongoing support is worth far more than a flashy site with no one to call when things go sideways.</p>
+
+          <div class="callout red">
+            <p><strong>Watch out for:</strong> Agencies that build on platforms you can't access yourself. Maintenance contracts with vague scope. No defined response time for issues. Being handed a site with no training on how to use it.</p>
+          </div>
+
+          <hr />
+
+          <h2>The Shortlist Question</h2>
+
+          <p>Once you've narrowed it down to two or three agencies, there's one question worth asking each of them: <em>"If this project goes wrong, what's the most likely reason?"</em></p>
+
+          <p>A bad agency will dodge the question or pivot to reassurances. A good one will give you a specific, honest answer — scope creep, unclear feedback, timeline slippage — and tell you exactly how they prevent it. That answer tells you more than any portfolio.</p>
+
+          <p>You're not just buying a website. You're hiring a partner for the next several weeks, and potentially years if you need ongoing support. The relationship matters as much as the deliverable.</p>
+
+          <div class="callout">
+            <p><strong>TakeHold Media is happy to be on your shortlist.</strong> We'd rather earn your trust through transparency than pressure you into a decision. <a href="../about.html">Learn how we work</a>, then put us through the same questions above. We'll give you straight answers to all of them.</p>
+          </div>
+
+          <hr />
+
+          <h2>Bottom Line</h2>
+
+          <p>The right agency shows their work, asks good questions, talks about SEO without being prompted, gives you honest timelines, and has a plan for your site after launch. The wrong one does the opposite — and usually looks fine until you've already signed.</p>
+
+          <p>Take your time. Ask hard questions. Trust the agency that makes you feel informed, not the one that makes you feel rushed.</p>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-anchor"><i class="ti ti-anchor"></i></div>
+            <h4>Evaluating agencies?</h4>
+            <p>We're happy to be on your shortlist. Here's how to evaluate us the same way — one honest conversation and no pressure.</p>
+            <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+          </div>
+          <div class="sidebar-related">
+            <h5>More from the blog</h5>
+            <a href="how-much-does-a-website-cost-for-small-business.html">How Much Does a Website Cost for a Small Business?</a>
+            <a href="custom-website-vs-template.html">Custom Website vs. Template: What Nobody Tells You</a>
+            <a href="index.html">Browse all articles →</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Strip ── -->
+  <section class="cta-strip">
+    <div class="cta-anchor-bg"><i class="ti ti-anchor"></i></div>
+    <div class="container" style="position:relative; z-index:1;">
+      <h2>Ready to talk to someone straight?</h2>
+      <p>We don't do vague timelines, mystery pricing, or sites you can't update yourself. One call and we'll tell you exactly what your project needs — and whether we're the right fit for it.</p>
+      <div class="btn-actions">
+        <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+        <a href="../work.html" class="btn btn-outline-white">See Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="wordmark wordmark-white">
+            <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+            <span class="wordmark-line2">Media</span>
+          </a>
+          <p>Helping local and growing businesses anchor their brand online and hold their ground.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="../services.html#web">Website Design</a>
+          <a href="../services.html#seo">SEO</a>
+          <a href="../services.html#social">Social Media</a>
+          <a href="../services.html#branding">Branding</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../work.html">Our Work</a>
+          <a href="../about.html">About</a>
+          <a href="index.html">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:hello@takeholdmedia.com">hello@takeholdmedia.com</a>
+          <a href="tel:3212741108">321.274.1108</a>
+          <a href="../contact.html">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TakeHold Media · DBA TMB Holdings · All rights reserved</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
