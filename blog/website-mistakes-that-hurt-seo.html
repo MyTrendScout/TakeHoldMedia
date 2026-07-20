@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7 Website Mistakes That Are Quietly Hurting Your Google Ranking | TakeHold Media</title>
+  <meta name="description" content="Seven fixable website mistakes that hurt your SEO — no HTTPS, missing meta descriptions, duplicate titles, bad images, and more. Here's what each one costs you and how to fix it." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    /* ── Article Hero ── */
+    .article-hero {
+      padding: 9rem 0 4rem;
+      background: var(--offwhite);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--taupe) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .article-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--light);
+      margin-bottom: 1.5rem;
+    }
+    .article-breadcrumb a { color: var(--teal); transition: color 0.2s; }
+    .article-breadcrumb a:hover { color: var(--navy); }
+    .article-breadcrumb .sep { color: var(--taupe); }
+    .article-cat {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(47,110,111,0.1);
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--light);
+    }
+    .article-meta .dot { color: var(--taupe); }
+    .article-hero-img {
+      margin-top: 3rem;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 420px;
+    }
+    .article-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Article Body ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 5rem;
+      padding: 5rem 0 6rem;
+      align-items: start;
+    }
+    .article-prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin: 2.8rem 0 0.8rem;
+      line-height: 1.3;
+    }
+    .article-prose h2:first-child { margin-top: 0; }
+    .article-prose p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose ul {
+      list-style: none;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .article-prose ul li {
+      font-size: 0.97rem;
+      color: var(--mid);
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .article-prose ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .article-prose .callout {
+      background: var(--offwhite);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .callout p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--navy);
+    }
+    .article-prose .step-block {
+      background: var(--white);
+      border: 1px solid var(--taupe);
+      border-radius: 10px;
+      padding: 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .step-block ol {
+      list-style: none;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 0;
+    }
+    .article-prose .step-block ol li {
+      counter-increment: steps;
+      padding-left: 2.2rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .article-prose .step-block ol li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+    }
+    .article-prose hr {
+      border: none;
+      border-top: 1px solid var(--taupe);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-cta {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .sidebar-cta-anchor {
+      position: absolute;
+      right: -15px;
+      bottom: -10px;
+      font-size: 8rem;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+    .sidebar-cta h4 {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta .btn { width: 100%; justify-content: center; position: relative; z-index: 1; }
+    .sidebar-related h5 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1.2rem;
+    }
+    .sidebar-related a {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--taupe);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .sidebar-related a:hover { color: var(--teal); }
+    .sidebar-related a:last-child { border-bottom: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .article-sidebar { position: static; }
+      .article-hero-img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="always-light" id="nav">
+    <a href="../index.html" class="wordmark">
+      <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+      <span class="wordmark-line2">Media</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../work.html">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../contact.html" class="btn-nav">Get Started</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── Article Hero ── -->
+  <section class="article-hero">
+    <div class="hero-dots"></div>
+    <div class="container">
+      <div class="article-hero-inner">
+        <div class="article-breadcrumb">
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <span>SEO</span>
+        </div>
+        <span class="article-cat">SEO</span>
+        <h1>7 Website Mistakes That Are Quietly Hurting Your Google Ranking</h1>
+        <div class="article-meta">
+          <span>July 2026</span>
+          <span class="dot">·</span>
+          <span>6 min read</span>
+          <span class="dot">·</span>
+          <span>TakeHold Media</span>
+        </div>
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop" alt="Website mistakes that hurt SEO rankings" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Article Body ── -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Main Content -->
+        <div class="article-prose">
+
+          <p>Most small business websites have at least three of these problems. None of them are catastrophic on their own. Together, they're enough to keep you off the first page of Google while a competitor with a less impressive business climbs right past you.</p>
+
+          <p>The frustrating part: most of these mistakes are invisible unless you know where to look. Your site looks fine. Your phone just isn't ringing as much as it should.</p>
+
+          <p>Here are the seven most common fixable SEO mistakes we find when we audit a small business website — and what to do about each one.</p>
+
+          <hr />
+
+          <h2>Mistake 1: No HTTPS (Your Site Isn't Secure)</h2>
+
+          <p>If your website URL starts with <strong>http://</strong> instead of <strong>https://</strong>, Google considers it insecure. It's been a ranking signal since 2014, and browsers now show a "Not Secure" warning to visitors on HTTP sites. That warning kills trust before anyone reads a word of your copy.</p>
+
+          <p>HTTPS is enabled through an SSL certificate. Most web hosts include one for free. If your site doesn't have it, your host can add it — usually in minutes.</p>
+
+          <div class="callout">
+            <p><strong>How to check:</strong> Look at your URL in the browser bar. Does it show a padlock icon and start with https://? If it shows "Not Secure" or starts with http://, contact your host today. This is a quick fix with a real ranking impact.</p>
+          </div>
+
+          <hr />
+
+          <h2>Mistake 2: Missing or Duplicate Meta Descriptions</h2>
+
+          <p>A meta description is the short blurb that appears under your page title in Google search results. It doesn't directly affect rankings, but it affects click-through rate — and click-through rate absolutely affects rankings.</p>
+
+          <p>Many small business websites either have no meta descriptions (so Google writes one for you, usually badly) or copy the same description across every page (which tells Google each page is identical). Neither is good.</p>
+
+          <p>Every page on your site should have a unique meta description — 150 to 160 characters — that accurately describes what's on that page and gives someone a reason to click.</p>
+
+          <div class="callout">
+            <p><strong>How to check:</strong> Install a free browser extension like SEO Meta in 1 Click and run it on your key pages. Or paste your URL into a tool like Screaming Frog's free tier. Look for blank or duplicate descriptions.</p>
+          </div>
+
+          <hr />
+
+          <h2>Mistake 3: Duplicate or Generic Page Titles</h2>
+
+          <p>Your page title — the text that appears in the browser tab and as the blue link in Google results — is one of the most important on-page SEO signals you have. If every page on your site says "Home | My Business" or uses the same title, Google has no way to understand what each page is about.</p>
+
+          <p>Each page title should be unique, include the primary keyword for that page, and ideally mention your city if you serve a local market. "Website Design for Restaurants in Orlando | TakeHold Media" tells Google exactly what that page is about. "Services" tells Google nothing.</p>
+
+          <div class="callout">
+            <p><strong>How to fix it:</strong> Open each key page in your browser and look at the tab. Write down what you see. Then rewrite any title that's generic, missing a keyword, or identical to another page. Keep titles under 60 characters so they don't get cut off in results.</p>
+          </div>
+
+          <hr />
+
+          <h2>Mistake 4: Images With No Alt Text</h2>
+
+          <p>Google can't see your images the way a human can. It reads the alt text attribute — a short description you attach to each image in the HTML — to understand what the image shows. If your images have no alt text, Google is ignoring them entirely. Worse, you're missing an opportunity to reinforce your keywords on every page.</p>
+
+          <p>Alt text also matters for accessibility. Screen readers use it to describe images to visually impaired visitors. It's the right thing to do, and it helps your rankings. There's no reason to skip it.</p>
+
+          <div class="callout">
+            <p><strong>How to fix it:</strong> In your CMS (WordPress, Squarespace, Wix, etc.), every image upload has an "alt text" or "alternative text" field. Describe the image in plain English — "Orlando web designer working on a client project" is better than "image1" or leaving it blank.</p>
+          </div>
+
+          <hr />
+
+          <h2>Mistake 5: No Mobile Optimization</h2>
+
+          <p>Google uses mobile-first indexing. That means it crawls and ranks your website based on the mobile version, not the desktop version. If your site doesn't display properly on a phone — text that requires zooming, buttons too small to tap, images that overflow the screen — you are being penalized in rankings regardless of how good your desktop experience is.</p>
+
+          <p>Over 60% of local searches happen on mobile. If you lose rankings on mobile, you lose the majority of the searches that matter most for a local business.</p>
+
+          <div class="callout">
+            <p><strong>How to check:</strong> Pull up your site on your own phone right now. Can you read the text without zooming? Can you tap the navigation? Does the layout hold together? Then run the URL through Google's Mobile-Friendly Test (search "Google mobile-friendly test") for a technical diagnosis.</p>
+          </div>
+
+          <hr />
+
+          <h2>Mistake 6: Page Load Time Over 3 Seconds</h2>
+
+          <p>Google measures how fast your pages load — and it factors that into rankings. A page that takes 4 or 5 seconds to load doesn't just rank lower. It also causes visitors to leave before they ever see your content. Google sees that exit behavior and treats it as a signal that your page isn't useful.</p>
+
+          <p>The most common culprits: uncompressed images, too many third-party scripts, cheap shared hosting, or an outdated CMS theme loaded with unused code. Often just optimizing your images — compressing them before upload or using a tool like TinyPNG — makes a noticeable difference.</p>
+
+          <div class="callout">
+            <p><strong>How to check:</strong> Go to PageSpeed Insights (pagespeed.web.dev) and run your homepage and your most important service page. A score under 50 on mobile is a problem. The report will tell you exactly what's slowing the page down — prioritize the issues flagged as "high impact."</p>
+          </div>
+
+          <hr />
+
+          <h2>Mistake 7: No Link Between Your Website and Google Business Profile</h2>
+
+          <p>Your Google Business Profile and your website are meant to work together. Google uses the consistency between them as a trust signal. If the URL in your GBP points to a dead page, an old domain, or a link that redirects multiple times before landing — that's a problem. If your GBP and your website describe your business differently, that inconsistency erodes trust.</p>
+
+          <p>More importantly, your website should include your business name, address, and phone number in text (not just an image) — ideally in the footer on every page. This NAP data needs to match your GBP exactly. Any discrepancy — a suite number missing here, a phone number formatted differently there — chips away at the local authority Google assigns to your business.</p>
+
+          <div class="callout">
+            <p><strong>How to check:</strong> Open your GBP and copy the website URL. Paste it into a browser and confirm it goes exactly where it should, with no redirect chains. Then compare the business name, address, and phone number on your website to what's in your GBP. They should be word-for-word identical.</p>
+          </div>
+
+          <hr />
+
+          <h2>What to Do Next</h2>
+
+          <p>You don't need to fix all seven at once. Work through them in order of difficulty — the quick wins first, the technical work after.</p>
+
+          <div class="step-block">
+            <ol>
+              <li><strong>Confirm your site has HTTPS</strong> — 5 minutes with your host if it doesn't.</li>
+              <li><strong>Check your GBP URL and NAP consistency</strong> — compare side by side and fix any differences.</li>
+              <li><strong>Pull up your site on your phone</strong> — identify any obvious mobile display problems.</li>
+              <li><strong>Run PageSpeed Insights</strong> — note the high-impact items and address image compression first.</li>
+              <li><strong>Audit your page titles and meta descriptions</strong> — rewrite any that are generic or duplicated.</li>
+              <li><strong>Add alt text to images</strong> — especially on your homepage and service pages.</li>
+            </ol>
+          </div>
+
+          <p>Each fix moves the needle. None of them require a developer if you're on a modern CMS. All of them are worth doing before you spend money on ads — because even a great ad drives traffic to a site that won't convert or rank.</p>
+
+          <p>If you want someone to run this audit for you — and get a clear report on what's hurting your site right now — that's exactly what we do. We audit sites for exactly these issues. <a href="../contact.html">Free 20-minute call — we'll tell you what we find.</a></p>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-anchor"><i class="ti ti-anchor"></i></div>
+            <h4>Want us to audit your site?</h4>
+            <p>We check for all seven of these mistakes — plus more. Free 20-minute call. We'll tell you what we find.</p>
+            <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+          </div>
+          <div class="sidebar-related">
+            <h5>More from the blog</h5>
+            <a href="why-your-business-isnt-showing-up-on-google.html">Why Your Business Isn't Showing Up on Google</a>
+            <a href="local-seo-checklist-for-small-businesses.html">The Local SEO Checklist for Small Businesses</a>
+            <a href="how-to-optimize-google-business-profile.html">How to Optimize Your Google Business Profile</a>
+            <a href="index.html">Browse all articles →</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Strip ── -->
+  <section class="cta-strip">
+    <div class="cta-anchor-bg"><i class="ti ti-anchor"></i></div>
+    <div class="container" style="position:relative; z-index:1;">
+      <h2>We audit sites for exactly these issues.</h2>
+      <p>Free 20-minute call — we'll look at your site, tell you what we find, and give you a clear picture of what's holding your rankings back. No pitch. Just the truth.</p>
+      <div class="btn-actions">
+        <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+        <a href="../services.html#seo" class="btn btn-outline-white">See Our SEO Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="wordmark wordmark-white">
+            <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+            <span class="wordmark-line2">Media</span>
+          </a>
+          <p>Helping local and growing businesses anchor their brand online and hold their ground.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="../services.html#web">Website Design</a>
+          <a href="../services.html#seo">SEO</a>
+          <a href="../services.html#social">Social Media</a>
+          <a href="../services.html#branding">Branding</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../work.html">Our Work</a>
+          <a href="../about.html">About</a>
+          <a href="index.html">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:hello@takeholdmedia.com">hello@takeholdmedia.com</a>
+          <a href="tel:3212741108">321.274.1108</a>
+          <a href="../contact.html">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TakeHold Media · DBA TMB Holdings · All rights reserved</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
