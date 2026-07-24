@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media for Local Businesses: What Actually Works in 2026 | TakeHold Media</title>
+  <meta name="description" content="Forget going viral. Here's what social media actually does for local businesses in 2026 — which platforms matter, how often to post, and why consistency beats everything else." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    /* ── Article Hero ── */
+    .article-hero {
+      padding: 9rem 0 4rem;
+      background: var(--offwhite);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--taupe) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .article-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--light);
+      margin-bottom: 1.5rem;
+    }
+    .article-breadcrumb a { color: var(--teal); transition: color 0.2s; }
+    .article-breadcrumb a:hover { color: var(--navy); }
+    .article-breadcrumb .sep { color: var(--taupe); }
+    .article-cat {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(47,110,111,0.1);
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--light);
+    }
+    .article-meta .dot { color: var(--taupe); }
+    .article-hero-img {
+      margin-top: 3rem;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 420px;
+    }
+    .article-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Article Body ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 5rem;
+      padding: 5rem 0 6rem;
+      align-items: start;
+    }
+    .article-prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin: 2.8rem 0 0.8rem;
+      line-height: 1.3;
+    }
+    .article-prose h2:first-child { margin-top: 0; }
+    .article-prose p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose ul {
+      list-style: none;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .article-prose ul li {
+      font-size: 0.97rem;
+      color: var(--mid);
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .article-prose ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .article-prose .callout {
+      background: var(--offwhite);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .callout p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--navy);
+    }
+    .article-prose .step-block {
+      background: var(--white);
+      border: 1px solid var(--taupe);
+      border-radius: 10px;
+      padding: 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .step-block ol {
+      list-style: none;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 0;
+    }
+    .article-prose .step-block ol li {
+      counter-increment: steps;
+      padding-left: 2.2rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .article-prose .step-block ol li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+    }
+    .article-prose hr {
+      border: none;
+      border-top: 1px solid var(--taupe);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-cta {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .sidebar-cta-anchor {
+      position: absolute;
+      right: -15px;
+      bottom: -10px;
+      font-size: 8rem;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+    .sidebar-cta h4 {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta .btn { width: 100%; justify-content: center; position: relative; z-index: 1; }
+    .sidebar-related h5 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1.2rem;
+    }
+    .sidebar-related a {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--taupe);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .sidebar-related a:hover { color: var(--teal); }
+    .sidebar-related a:last-child { border-bottom: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .article-sidebar { position: static; }
+      .article-hero-img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="always-light" id="nav">
+    <a href="../index.html" class="wordmark">
+      <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+      <span class="wordmark-line2">Media</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../work.html">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../contact.html" class="btn-nav">Get Started</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── Article Hero ── -->
+  <section class="article-hero">
+    <div class="hero-dots"></div>
+    <div class="container">
+      <div class="article-hero-inner">
+        <div class="article-breadcrumb">
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <span>Social Media</span>
+        </div>
+        <span class="article-cat">Social Media</span>
+        <h1>Social Media for Local Businesses: What Actually Works in 2026</h1>
+        <div class="article-meta">
+          <span>July 2026</span>
+          <span class="dot">·</span>
+          <span>6 min read</span>
+          <span class="dot">·</span>
+          <span>TakeHold Media</span>
+        </div>
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&auto=format&fit=crop" alt="Social media marketing for local businesses in 2026" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Article Body ── -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Main Content -->
+        <div class="article-prose">
+
+          <p>Most local businesses feel like they should be doing more on social media. They post sporadically, get little traction, and wonder if it's even worth the time. Some hire someone to run it, see mediocre results, and go back to ignoring it.</p>
+
+          <p>The problem usually isn't effort. It's that people are chasing the wrong goal — trying to go viral instead of trying to be useful and consistent to a small, local audience that already knows them or could.</p>
+
+          <p>Social media does work for local businesses. Just not the way most people think it does.</p>
+
+          <hr />
+
+          <h2>What Social Media Actually Does for a Local Business</h2>
+
+          <p>Let's set the right expectations first, because most of the frustration with social media comes from measuring it wrong.</p>
+
+          <p>For a local business, social media is not primarily a growth channel. It's a credibility channel. When a potential customer is comparing you to a competitor, they'll often check your Instagram or Facebook page before they call. What they find — or don't find — affects whether they trust you.</p>
+
+          <p>A profile with consistent, recent posts signals that your business is active, professional, and real. A profile with posts from 18 months ago signals the opposite. It's a silent judgment before you've said a word.</p>
+
+          <div class="callout">
+            <p><strong>The bar is low, and that's good news.</strong> Most local businesses do social media badly. Showing up consistently and looking professional puts you ahead of the majority of your competitors without a single post going viral.</p>
+          </div>
+
+          <p>Social media also supports referrals in a way people rarely talk about. When someone refers you, the person they referred you to looks you up. If your social presence is strong, it reinforces the recommendation. If it's weak or nonexistent, it creates doubt.</p>
+
+          <hr />
+
+          <h2>Which Platforms Actually Matter</h2>
+
+          <p>The short answer: probably fewer than you think.</p>
+
+          <p><strong>Facebook</strong> is still the most relevant platform for local businesses in most markets. Your target audience — people in your city who are 30 to 60 years old with disposable income — is more likely to be on Facebook than anywhere else. Local community groups, neighborhood pages, and local business directories are all still active there. If you're only going to maintain one platform, make it Facebook.</p>
+
+          <p><strong>Instagram</strong> is worth maintaining if your work is visual — home services, landscaping, interior design, food, fitness, before-and-afters of any kind. Posts that show the work tend to perform better than anything else. If your business doesn't produce naturally visual output, Instagram is a harder platform to justify.</p>
+
+          <p><strong>Google Business Profile</strong> functions like a social platform now and is often overlooked. Posts, Q&amp;As, photo updates — all of these appear directly in Google search results for your business. It's the one "social" channel that directly affects whether people find you before they've even decided to look you up.</p>
+
+          <p><strong>TikTok and YouTube Shorts</strong> are worth considering if video content fits naturally into your business. A contractor documenting a job. A service business answering FAQs on camera. Short-form video rewards authenticity over production quality. But video takes time, and if it's not a natural fit, don't force it.</p>
+
+          <p>The platforms not on this list — Pinterest, Twitter/X, LinkedIn for most local businesses — aren't wrong choices, but they're lower priority. Pick one or two platforms and do them well before spreading thin across five.</p>
+
+          <hr />
+
+          <h2>How Often You Actually Need to Post</h2>
+
+          <p>The honest answer is less than most social media "gurus" will tell you.</p>
+
+          <p>For a local business, three to four posts per week on your primary platform is enough to stay active and relevant. One to two posts per week is acceptable if the content is good. Daily posting is only worth it if you have the systems to maintain quality — otherwise it degrades into filler, which is worse than silence.</p>
+
+          <div class="callout">
+            <p><strong>Consistency beats frequency.</strong> Posting twice a week every week for a year is more effective than posting daily for a month and then going dark. Algorithms reward consistency. More importantly, so do humans — they notice when a business disappears.</p>
+          </div>
+
+          <p>What does good content look like for a local business? It's simpler than most people make it:</p>
+
+          <ul>
+            <li><strong>Show your work.</strong> Before and afters, completed projects, behind-the-scenes of your process. Real photos from real jobs outperform stock images every time.</li>
+            <li><strong>Share reviews.</strong> Turn a 5-star Google review into a post. Screenshot it, put it on a branded graphic, post it. Social proof on social media is a natural fit.</li>
+            <li><strong>Answer the questions you get asked.</strong> If three clients this month asked you the same thing, that's a post. Short, helpful, direct.</li>
+            <li><strong>Show your local roots.</strong> Mention the neighborhoods you work in. Tag the city. Reference local events or landmarks when it fits naturally. Local content gets picked up by local audiences.</li>
+            <li><strong>Be a person, not a brand.</strong> Polished corporate content performs poorly for local businesses. People want to see who they're hiring. Authentic is better than perfect.</li>
+          </ul>
+
+          <hr />
+
+          <h2>The Mistake That Kills Most Local Social Strategies</h2>
+
+          <p>The biggest mistake isn't posting too little. It's treating social media as a separate job instead of a system.</p>
+
+          <p>Businesses that do social well have usually built a lightweight process. Someone takes a few photos on job sites each week. Reviews get screenshotted when they come in. Questions from clients go into a document that becomes content ideas. Posts get batched and scheduled once a week instead of scrambled together each morning.</p>
+
+          <p>Without that system, social media feels like an endless, high-pressure demand. With it, an hour a week can produce enough content to stay consistently active.</p>
+
+          <p>The other mistake is expecting immediate results. Social media is slow. A profile that's been active and consistent for six months looks completely different from one that's three weeks old. The payoff is cumulative — and it's real, but only if you stick with it long enough to see it.</p>
+
+          <hr />
+
+          <h2>When It's Worth Paying Someone to Do It</h2>
+
+          <p>The break-even point is simpler than most business owners expect: if social media management costs you less than the clients it helps you retain or close, it pays. That math usually works out quickly, because one converted inquiry a month more than covers the cost of most management packages.</p>
+
+          <p>What you should expect from someone managing your <a href="../services.html#social">social media</a> is consistent posting, content that fits your brand voice, engagement with comments and messages, and regular reporting on what's working. What you should not expect is overnight growth or viral posts. Anyone promising those things is overselling.</p>
+
+          <p>The decision to outsource usually comes down to one question: do you have the time and the desire to build the system yourself? If yes, do it. If not, bring in someone who already has that system built.</p>
+
+          <hr />
+
+          <h2>The Simple Version</h2>
+
+          <p>If you take nothing else from this article, take this:</p>
+
+          <p>Pick one or two platforms. Post consistently — three times a week is enough. Show real work, share real reviews, answer real questions. Show up in your local area. Stay at it for six months before you evaluate whether it's working.</p>
+
+          <p>That's it. It's not complicated. The businesses that win at local social media aren't doing anything exotic. They're just consistent while their competitors aren't.</p>
+
+          <p>Social media won't replace your other marketing. It doesn't have to. But a consistent presence that builds credibility and trust, month after month, makes every other thing you do — referrals, ads, SEO — work better. That's the real value, and it's more than enough.</p>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-anchor"><i class="ti ti-anchor"></i></div>
+            <h4>Want someone to handle this?</h4>
+            <p>We manage social media for a small number of clients — consistent posting, real content, no filler. One call tells us both if it's a fit.</p>
+            <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+          </div>
+          <div class="sidebar-related">
+            <h5>More from the blog</h5>
+            <a href="why-word-of-mouth-isnt-enough.html">Why Word-of-Mouth Isn't Enough Anymore</a>
+            <a href="local-seo-checklist-for-small-businesses.html">The Local SEO Checklist for Small Businesses</a>
+            <a href="index.html">Browse all articles →</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Strip ── -->
+  <section class="cta-strip">
+    <div class="cta-anchor-bg"><i class="ti ti-anchor"></i></div>
+    <div class="container" style="position:relative; z-index:1;">
+      <h2>Consistent social media. No guesswork.</h2>
+      <p>We handle social media for a small number of local businesses — real content, consistent posting, and a strategy that actually fits your brand. Let's see if we're a good fit.</p>
+      <div class="btn-actions">
+        <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+        <a href="../services.html#social" class="btn btn-outline-white">See Our Social Media Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="wordmark wordmark-white">
+            <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+            <span class="wordmark-line2">Media</span>
+          </a>
+          <p>Helping local and growing businesses anchor their brand online and hold their ground.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="../services.html#web">Website Design</a>
+          <a href="../services.html#seo">SEO</a>
+          <a href="../services.html#social">Social Media</a>
+          <a href="../services.html#branding">Branding</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../work.html">Our Work</a>
+          <a href="../about.html">About</a>
+          <a href="index.html">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:hello@takeholdmedia.com">hello@takeholdmedia.com</a>
+          <a href="tel:3212741108">321.274.1108</a>
+          <a href="../contact.html">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TakeHold Media · DBA TMB Holdings · All rights reserved</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
