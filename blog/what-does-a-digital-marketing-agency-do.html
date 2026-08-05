@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Does a Digital Marketing Agency Actually Do? (Plain-English Answer) | TakeHold Media</title>
+  <meta name="description" content="Confused about what a digital marketing agency actually does for your money? Here's a plain-English breakdown — no jargon, no sales pitch." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    /* ── Article Hero ── */
+    .article-hero {
+      padding: 9rem 0 4rem;
+      background: var(--offwhite);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--taupe) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .article-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--light);
+      margin-bottom: 1.5rem;
+    }
+    .article-breadcrumb a { color: var(--teal); transition: color 0.2s; }
+    .article-breadcrumb a:hover { color: var(--navy); }
+    .article-breadcrumb .sep { color: var(--taupe); }
+    .article-cat {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(47,110,111,0.1);
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--light);
+    }
+    .article-meta .dot { color: var(--taupe); }
+    .article-hero-img {
+      margin-top: 3rem;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 420px;
+    }
+    .article-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Article Body ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 5rem;
+      padding: 5rem 0 6rem;
+      align-items: start;
+    }
+    .article-prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin: 2.8rem 0 0.8rem;
+      line-height: 1.3;
+    }
+    .article-prose h2:first-child { margin-top: 0; }
+    .article-prose p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose ul {
+      list-style: none;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .article-prose ul li {
+      font-size: 0.97rem;
+      color: var(--mid);
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .article-prose ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .article-prose .callout {
+      background: var(--offwhite);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .callout p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--navy);
+    }
+    .article-prose .step-block {
+      background: var(--white);
+      border: 1px solid var(--taupe);
+      border-radius: 10px;
+      padding: 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .step-block ol {
+      list-style: none;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 0;
+    }
+    .article-prose .step-block ol li {
+      counter-increment: steps;
+      padding-left: 2.2rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .article-prose .step-block ol li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+    }
+    .article-prose hr {
+      border: none;
+      border-top: 1px solid var(--taupe);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-cta {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .sidebar-cta-anchor {
+      position: absolute;
+      right: -15px;
+      bottom: -10px;
+      font-size: 8rem;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+    .sidebar-cta h4 {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta .btn { width: 100%; justify-content: center; position: relative; z-index: 1; }
+    .sidebar-related h5 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1.2rem;
+    }
+    .sidebar-related a {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--taupe);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .sidebar-related a:hover { color: var(--teal); }
+    .sidebar-related a:last-child { border-bottom: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .article-sidebar { position: static; }
+      .article-hero-img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="always-light" id="nav">
+    <a href="../index.html" class="wordmark">
+      <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+      <span class="wordmark-line2">Media</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../work.html">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../contact.html" class="btn-nav">Get Started</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── Article Hero ── -->
+  <section class="article-hero">
+    <div class="hero-dots"></div>
+    <div class="container">
+      <div class="article-hero-inner">
+        <div class="article-breadcrumb">
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <span>Strategy</span>
+        </div>
+        <span class="article-cat">Strategy</span>
+        <h1>What Does a Digital Marketing Agency Actually Do? (Plain-English Answer)</h1>
+        <div class="article-meta">
+          <span>August 2026</span>
+          <span class="dot">·</span>
+          <span>5 min read</span>
+          <span class="dot">·</span>
+          <span>TakeHold Media</span>
+        </div>
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop" alt="Digital marketing agency team at work" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Article Body ── -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Main Content -->
+        <div class="article-prose">
+
+          <p>You've heard the term a hundred times. Maybe you've even hired one. But if someone asked you to explain what a digital marketing agency actually does on a Tuesday morning — most people would struggle to give a clear answer.</p>
+
+          <p>That's not a knock on business owners. It's a knock on agencies that have spent decades hiding behind vague language and impressive-sounding deliverables. "Integrated digital strategy." "Brand ecosystem development." "Omnichannel presence management." What does any of that mean in practice?</p>
+
+          <p>Here's the plain-English version.</p>
+
+          <hr />
+
+          <h2>The Core Job: Make Your Business Findable and Credible Online</h2>
+
+          <p>At the most basic level, a digital marketing agency's job is to help people find you online — and make sure what they find when they do is good enough to earn their business.</p>
+
+          <p>That breaks down into a handful of distinct disciplines. Most agencies offer some combination of all of them. Better agencies are honest about which ones they're genuinely strong at.</p>
+
+          <hr />
+
+          <h2>Website Design and Development</h2>
+
+          <p>This is the foundation everything else rests on. Your website is your digital storefront. It's the first impression for most of your leads, the proof point your referrals check before calling, and the platform your SEO and ads send people to.</p>
+
+          <p>A good agency doesn't just make a site look nice. They build it to convert — clear messaging, fast load times, mobile-optimized layouts, and calls to action that tell visitors exactly what to do next.</p>
+
+          <div class="callout">
+            <p><strong>What this looks like in practice:</strong> You get a site that loads in under two seconds, works cleanly on a phone, communicates what you do and who you serve in the first five seconds, and makes it easy to contact you or buy from you.</p>
+          </div>
+
+          <p>A slow, confusing, or outdated website undermines everything else you spend on marketing. It's the first thing worth getting right.</p>
+
+          <hr />
+
+          <h2>Search Engine Optimization (SEO)</h2>
+
+          <p>SEO is the work of making your business show up when people search for what you offer. When someone in your city types "plumber near me" or "best accountant in Orlando," SEO determines whether your name appears — or your competitor's does.</p>
+
+          <p>There are three main components:</p>
+
+          <ul>
+            <li><strong>Local SEO</strong> — optimizing your Google Business Profile, building local citations, and earning reviews so you appear in map results.</li>
+            <li><strong>On-page SEO</strong> — structuring your website's content, headings, and metadata around the keywords your customers actually use.</li>
+            <li><strong>Technical SEO</strong> — fixing the behind-the-scenes issues that slow your site down or make it hard for Google to index.</li>
+          </ul>
+
+          <p>SEO is a long game. Real results take three to twelve months. Any agency promising first-page rankings in 30 days is selling you something that won't hold up. But done consistently, SEO is the highest-ROI channel most local businesses can invest in — because organic traffic compounds over time and doesn't stop the moment you stop paying for it.</p>
+
+          <hr />
+
+          <h2>Social Media Management</h2>
+
+          <p>Managing social media for a business isn't the same as posting on your personal account. A good agency handles content creation, scheduling, community engagement, and platform-specific strategy — and ties all of it back to business goals rather than vanity metrics.</p>
+
+          <p>The honest truth about social: it's rarely a direct revenue driver for local service businesses. It works best as a trust-builder and brand reinforcer — keeping you top of mind with people who already know you, and making your business look credible to people researching you.</p>
+
+          <div class="callout">
+            <p><strong>Worth knowing:</strong> For most local businesses, showing real work — job sites, before-and-afters, team photos, client results — outperforms polished, branded content. Authenticity beats production value on every platform right now.</p>
+          </div>
+
+          <hr />
+
+          <h2>Branding</h2>
+
+          <p>Branding is the layer underneath everything else. It's your name, your logo, your colors, your tone of voice, and the story you tell about why you exist. Done right, it makes every other marketing channel work harder — because there's a coherent identity behind it.</p>
+
+          <p>Done wrong, it's just a logo that looks okay and a tagline nobody remembers.</p>
+
+          <p>A good agency helps you articulate what actually makes you different — not in corporate-speak, but in language your customers recognize and respond to. That clarity makes your website copy better, your social media more consistent, and your sales conversations easier.</p>
+
+          <hr />
+
+          <h2>Paid Advertising</h2>
+
+          <p>Paid ads — Google Ads, Meta Ads, and similar — are the fast lane. Unlike SEO, they can generate leads the same week you turn them on. Unlike social, they target people who are actively searching for what you sell.</p>
+
+          <p>The tradeoff: they cost money to run, they stop the moment you stop paying, and they require ongoing optimization to stay profitable. A poorly managed ad account burns through budget fast. A well-managed one can be the most efficient lead source in your marketing mix.</p>
+
+          <p>Most local businesses are better served building organic presence first and adding paid ads once the foundation is solid. Running ads to a slow, unclear website is expensive and demoralizing.</p>
+
+          <hr />
+
+          <h2>What Separates Good Agencies from Bad Ones</h2>
+
+          <p>The discipline list above isn't what separates great agencies from mediocre ones. The difference is what they prioritize — and how honest they are with you.</p>
+
+          <p>Bad agencies lead with tactics. They'll sell you a social media package, run some ads, and hand you a report full of impressions and reach numbers that don't connect to revenue.</p>
+
+          <p>Good agencies lead with strategy. They ask what you're actually trying to accomplish, assess where the real gaps are, and sequence the work in order of impact. That usually means fixing the foundation before piling on tactics.</p>
+
+          <div class="step-block">
+            <ol>
+              <li><strong>Foundation first</strong> — website that converts, clear messaging, verified Google presence.</li>
+              <li><strong>Organic presence</strong> — SEO, reviews, local citations. The compounding layer.</li>
+              <li><strong>Brand consistency</strong> — voice, visuals, and positioning that hold everything together.</li>
+              <li><strong>Amplification</strong> — social media, content, paid ads once the above is working.</li>
+            </ol>
+          </div>
+
+          <p>Skipping ahead to step four before the first three are solid is how businesses end up spending money on marketing and wondering why it isn't working.</p>
+
+          <hr />
+
+          <h2>What TakeHold Media Does</h2>
+
+          <p>TakeHold Media is a boutique digital marketing agency based in Orlando. The work covers website design, local SEO, social media, and branding — the four disciplines local and growing businesses need most.</p>
+
+          <p>The approach is deliberately foundation-first. Before anything else, clients get a clear, fast, well-built digital presence. Then the work layers in — organic visibility, brand consistency, and where it makes sense, amplification.</p>
+
+          <p>It's not the biggest agency in the room. That's intentional. A small number of clients at a time means the work actually gets attention — not handed off to junior staff after the contract is signed.</p>
+
+          <p>You can see the <a href="../services.html">full range of services here</a>, or learn more <a href="../about.html">about the agency and the approach</a>.</p>
+
+          <div class="callout">
+            <p><strong>Not sure what you need?</strong> That's exactly what the first call is for. We'll look at where you are, ask the right questions, and tell you what actually makes sense for your business — even if the answer is "start smaller than you think."</p>
+          </div>
+
+          <p>If you're not sure what you need, that's exactly what our first call is for.</p>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-anchor"><i class="ti ti-anchor"></i></div>
+            <h4>Not sure what you need?</h4>
+            <p>That's exactly what our first call is for. No jargon, no pressure — just clarity on what makes sense for your business.</p>
+            <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+          </div>
+          <div class="sidebar-related">
+            <h5>More from the blog</h5>
+            <a href="why-word-of-mouth-isnt-enough.html">Why Word-of-Mouth Isn't Enough Anymore</a>
+            <a href="social-media-for-local-businesses.html">Social Media for Local Businesses: What Actually Works in 2026</a>
+            <a href="index.html">Browse all articles →</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Strip ── -->
+  <section class="cta-strip">
+    <div class="cta-anchor-bg"><i class="ti ti-anchor"></i></div>
+    <div class="container" style="position:relative; z-index:1;">
+      <h2>Ready to work with an agency that speaks plainly?</h2>
+      <p>We'll tell you what you actually need — not what's easiest to sell you. One conversation, no pitch, just an honest look at where you stand.</p>
+      <div class="btn-actions">
+        <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+        <a href="../services.html" class="btn btn-outline-white">See Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="wordmark wordmark-white">
+            <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+            <span class="wordmark-line2">Media</span>
+          </a>
+          <p>Helping local and growing businesses anchor their brand online and hold their ground.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="../services.html#web">Website Design</a>
+          <a href="../services.html#seo">SEO</a>
+          <a href="../services.html#social">Social Media</a>
+          <a href="../services.html#branding">Branding</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../work.html">Our Work</a>
+          <a href="../about.html">About</a>
+          <a href="index.html">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:hello@takeholdmedia.com">hello@takeholdmedia.com</a>
+          <a href="tel:3212741108">321.274.1108</a>
+          <a href="../contact.html">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TakeHold Media · DBA TMB Holdings · All rights reserved</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
