@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Get Your Website on the First Page of Google in Your City | TakeHold Media</title>
+  <meta name="description" content="Want to rank on page one of Google in your city? Here's the step-by-step playbook: GBP, on-page SEO, NAP consistency, local content, reviews, and backlinks." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    /* ── Article Hero ── */
+    .article-hero {
+      padding: 9rem 0 4rem;
+      background: var(--offwhite);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--taupe) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .article-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--light);
+      margin-bottom: 1.5rem;
+    }
+    .article-breadcrumb a { color: var(--teal); transition: color 0.2s; }
+    .article-breadcrumb a:hover { color: var(--navy); }
+    .article-breadcrumb .sep { color: var(--taupe); }
+    .article-cat {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(47,110,111,0.1);
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--light);
+    }
+    .article-meta .dot { color: var(--taupe); }
+    .article-hero-img {
+      margin-top: 3rem;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 420px;
+    }
+    .article-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Article Body ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 5rem;
+      padding: 5rem 0 6rem;
+      align-items: start;
+    }
+    .article-prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin: 2.8rem 0 0.8rem;
+      line-height: 1.3;
+    }
+    .article-prose h2:first-child { margin-top: 0; }
+    .article-prose p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose ul {
+      list-style: none;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .article-prose ul li {
+      font-size: 0.97rem;
+      color: var(--mid);
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .article-prose ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .article-prose .callout {
+      background: var(--offwhite);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .callout p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--navy);
+    }
+    .article-prose .step-block {
+      background: var(--white);
+      border: 1px solid var(--taupe);
+      border-radius: 10px;
+      padding: 1.6rem;
+      margin: 2rem 0;
+    }
+    .article-prose .step-block ol {
+      list-style: none;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 0;
+    }
+    .article-prose .step-block ol li {
+      counter-increment: steps;
+      padding-left: 2.2rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .article-prose .step-block ol li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+    }
+    .article-prose hr {
+      border: none;
+      border-top: 1px solid var(--taupe);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-cta {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .sidebar-cta-anchor {
+      position: absolute;
+      right: -15px;
+      bottom: -10px;
+      font-size: 8rem;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+    .sidebar-cta h4 {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .sidebar-cta .btn { width: 100%; justify-content: center; position: relative; z-index: 1; }
+    .sidebar-related h5 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1.2rem;
+    }
+    .sidebar-related a {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--taupe);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .sidebar-related a:hover { color: var(--teal); }
+    .sidebar-related a:last-child { border-bottom: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .article-sidebar { position: static; }
+      .article-hero-img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="always-light" id="nav">
+    <a href="../index.html" class="wordmark">
+      <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+      <span class="wordmark-line2">Media</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../work.html">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../contact.html" class="btn-nav">Get Started</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── Article Hero ── -->
+  <section class="article-hero">
+    <div class="hero-dots"></div>
+    <div class="container">
+      <div class="article-hero-inner">
+        <div class="article-breadcrumb">
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <span>SEO</span>
+        </div>
+        <span class="article-cat">SEO</span>
+        <h1>How to Get Your Website on the First Page of Google in Your City</h1>
+        <div class="article-meta">
+          <span>August 2026</span>
+          <span class="dot">·</span>
+          <span>8 min read</span>
+          <span class="dot">·</span>
+          <span>TakeHold Media</span>
+        </div>
+        <div class="article-hero-img">
+          <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&auto=format&fit=crop" alt="Getting your website to page one of Google" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Article Body ── -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Main Content -->
+        <div class="article-prose">
+
+          <p>There's no magic trick. No shortcut that puts you on page one by Friday.</p>
+
+          <p>But there is a playbook — and it works. Businesses that follow it consistently end up on the first page of Google in their city. Businesses that skip steps, or try it once and quit, don't.</p>
+
+          <p>This is the full playbook. Six moves, in order of impact. If you do all six and maintain them, you will rank. It takes time — typically three to twelve months — but the results compound and they last.</p>
+
+          <hr />
+
+          <h2>Step 1: Claim and Fully Complete Your Google Business Profile</h2>
+
+          <p>This is the highest-leverage action most local businesses can take. Full stop.</p>
+
+          <p>Your Google Business Profile (GBP) is what appears in the map pack — the three businesses Google highlights when someone searches "plumber in Orlando" or "web designer near me." That real estate is worth more than most paid ads. And it's free. But only if your profile is complete and verified.</p>
+
+          <p>Most small business GBPs are half-finished. The owner claimed it, added a phone number, and moved on. That's not enough. Google rewards profiles that are thorough, active, and accurate.</p>
+
+          <div class="callout">
+            <p><strong>What "fully complete" means:</strong> Every section filled in — business category (primary and secondary), service areas, hours (including holiday hours), a detailed business description with your city and services named, at least 10 photos, a list of your actual services with descriptions, and the Q&amp;A section populated with questions you'd want customers to ask.</p>
+          </div>
+
+          <p>Beyond the initial setup, post to your GBP at least twice a month. Treat it like a secondary social media account. Google reads activity as a signal that your business is alive and relevant.</p>
+
+          <hr />
+
+          <h2>Step 2: Fix Your On-Page SEO</h2>
+
+          <p>Your website needs to tell Google — clearly and explicitly — what you do and where you do it.</p>
+
+          <p>Most small business sites fail at this. Generic headlines like "Welcome to Our Site" or "Quality Service You Can Trust" say nothing. Google can't rank you for something it can't identify from your content.</p>
+
+          <p>Every page on your site should be built around a specific keyword. Your homepage targets your broadest service plus your city. Each service page targets a narrower term. If you're a roofing company in Tampa, your homepage title tag shouldn't say "ABC Roofing." It should say something like "Tampa Roofing Company — Residential &amp; Commercial Roof Repair | ABC Roofing."</p>
+
+          <div class="callout">
+            <p><strong>The three things to fix first:</strong> Title tags (the text in your browser tab — include your primary keyword and city), H1 headings (the main headline on each page — should match your title tag intent), and meta descriptions (the snippet under your link in search results — 150–160 characters that include your keyword and a reason to click).</p>
+          </div>
+
+          <p>Also: your city needs to appear in your page body, not just in metadata. Google reads your content. If "Orlando" or "Tampa" or wherever you operate never appears in your copy, you're sending no geographic signal at all.</p>
+
+          <hr />
+
+          <h2>Step 3: Make Your NAP Consistent Everywhere</h2>
+
+          <p>NAP stands for Name, Address, Phone number. Google cross-references your business information across the entire web — Yelp, Yellow Pages, Apple Maps, Bing Places, the Better Business Bureau, local chamber sites, industry directories, and dozens more.</p>
+
+          <p>When that information is inconsistent — your name formatted differently here, an old address there, a phone number that changed three years ago still listed somewhere — Google gets confused. It's not certain whether these are all the same business. That uncertainty suppresses your rankings.</p>
+
+          <div class="callout">
+            <p><strong>How to audit this:</strong> Search your business name plus your phone number in quotes. Also search your old address if you've moved. Find every listing. Make sure your name, address, and phone number are formatted identically on every one. Even small differences matter — "Suite 100" vs. "Ste. 100" counts.</p>
+          </div>
+
+          <p>Cleaning this up is tedious. It's also one of the most underrated ranking moves in local SEO because so few businesses actually do it.</p>
+
+          <hr />
+
+          <h2>Step 4: Create Local Content</h2>
+
+          <p>This is where most businesses stop short. They optimize their homepage and call it done.</p>
+
+          <p>The businesses that dominate local search do one more thing: they create content specifically designed for local searches. That means blog posts, service area pages, and FAQ content built around what their customers actually search for in their city.</p>
+
+          <p>If you're a landscaping company in Sarasota, a blog post titled "When to Overseed Your Lawn in Sarasota (Month-by-Month Guide)" does two things. It gives potential customers genuinely useful information. And it signals to Google that you're a local authority on landscaping in Sarasota — not just a company that happens to list Sarasota as their location.</p>
+
+          <div class="callout">
+            <p><strong>Where to start:</strong> Write one blog post per month that answers a question your customers ask you. Make it specific to your city or region. 600–1,000 words, written in plain language. This compounds. Twelve posts over a year builds real authority.</p>
+          </div>
+
+          <p>Service area pages work similarly. If you serve five cities, build a dedicated page for each one. Not duplicate pages — each one should have unique content specific to that area. Google treats these as separate local signals.</p>
+
+          <hr />
+
+          <h2>Step 5: Build Your Review Volume</h2>
+
+          <p>Reviews are a ranking factor. Not a soft, "nice to have" factor — an actual, measurable signal that Google uses to decide how prominently to show your business.</p>
+
+          <p>Businesses with more recent reviews consistently outrank businesses with fewer or older ones, even when the service quality is comparable. Google reads reviews as real-time evidence that your business is active and that customers trust you.</p>
+
+          <p>The word "recent" matters as much as the word "more." Forty reviews from two years ago is weaker than twenty reviews from the last six months. You need a steady, ongoing stream — not a one-time push.</p>
+
+          <div class="callout">
+            <p><strong>The simplest system that works:</strong> After every job or transaction, send the customer a direct link to your Google review page. Don't ask for a 5-star review — just ask them to share their experience. Most satisfied customers will. Respond to every review within a week, positive or negative. Responding signals to Google that you're engaged.</p>
+          </div>
+
+          <p>If you're starting from zero, get aggressive. Ask your last twenty satisfied clients this week. One good push can build the foundation. Then maintain it going forward.</p>
+
+          <hr />
+
+          <h2>Step 6: Earn Local Backlinks</h2>
+
+          <p>A backlink is a link from another website to yours. Google treats these as votes of confidence — evidence that other credible sources consider your site worth referencing. The more authoritative the source, the more the vote counts.</p>
+
+          <p>For a local business, local backlinks matter most. You don't need links from major publications (though that doesn't hurt). You need links from local sources: your city chamber of commerce, local business associations, industry directories, local news coverage, and partner businesses that can link to you from their site.</p>
+
+          <ul>
+            <li>Join your local chamber of commerce — most include a directory listing with a backlink</li>
+            <li>Get listed in industry-specific directories (contractors, attorneys, medical professionals, and most other categories have them)</li>
+            <li>Sponsor a local event or organization — many include a sponsor page with a link</li>
+            <li>Ask complementary businesses to link to you and offer to do the same</li>
+            <li>Pitch a local angle to your city's news site or business journal — a story that features you will almost always include a link</li>
+          </ul>
+
+          <p>This is the slowest step. Backlinks take time to acquire and time to impact rankings. But they're also the step that's hardest for competitors to replicate quickly, which makes them one of the most durable ranking advantages you can build.</p>
+
+          <hr />
+
+          <h2>The Order Matters</h2>
+
+          <p>Don't try to do all six at once. You'll get overwhelmed and do nothing well.</p>
+
+          <div class="step-block">
+            <ol>
+              <li><strong>Google Business Profile</strong> — start here, this week. Biggest return for least effort.</li>
+              <li><strong>On-page SEO</strong> — fix title tags, H1s, and add your city to your copy. Can be done in a day.</li>
+              <li><strong>NAP consistency</strong> — audit and clean up your citations over the next two to three weeks.</li>
+              <li><strong>Reviews</strong> — start asking now and never stop. This is an ongoing habit, not a project.</li>
+              <li><strong>Local content</strong> — write one post this month. Commit to one per month going forward.</li>
+              <li><strong>Backlinks</strong> — work this in parallel with content, one or two new links per month.</li>
+            </ol>
+          </div>
+
+          <p>Three months in, you'll see early signals — small ranking improvements, more GBP impressions, more clicks from search. Six months in, you'll see real movement. Twelve months in, if you've been consistent, you'll be wondering why you didn't start sooner.</p>
+
+          <p>That's how local SEO works. Not fast. Not magic. But it works — and once you're there, it's very hard for competitors to knock you off without doing the same sustained work.</p>
+
+          <p>If you'd rather have someone else run this playbook for you, <a href="../services.html#seo">that's what our local SEO service covers</a> — every step, every month, with reporting so you can see exactly what's moving.</p>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-anchor"><i class="ti ti-anchor"></i></div>
+            <h4>Want us to run this for you?</h4>
+            <p>This is exactly what we do for local SEO clients — every step, every month. Let's talk about what it looks like for your business.</p>
+            <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+          </div>
+          <div class="sidebar-related">
+            <h5>More from the blog</h5>
+            <a href="why-your-business-isnt-showing-up-on-google.html">Why Your Business Isn't Showing Up on Google</a>
+            <a href="local-seo-checklist-for-small-businesses.html">The Local SEO Checklist for Small Businesses</a>
+            <a href="how-long-does-seo-take-to-work.html">How Long Does SEO Actually Take?</a>
+            <a href="index.html">Browse all articles →</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Strip ── -->
+  <section class="cta-strip">
+    <div class="cta-anchor-bg"><i class="ti ti-anchor"></i></div>
+    <div class="container" style="position:relative; z-index:1;">
+      <h2>This is exactly what we do for clients. Let's talk.</h2>
+      <p>We run this playbook for local businesses every day — GBP, on-page SEO, NAP cleanup, content, reviews, and backlinks. One call and we'll show you where you stand and what to do first.</p>
+      <div class="btn-actions">
+        <a href="../contact.html" class="btn btn-primary">Schedule a Free Call <i class="ti ti-arrow-right"></i></a>
+        <a href="../services.html#seo" class="btn btn-outline-white">See Our SEO Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="wordmark wordmark-white">
+            <span class="wordmark-line1"><span class="wm-take">Take</span><span class="wm-hold">Hold</span></span>
+            <span class="wordmark-line2">Media</span>
+          </a>
+          <p>Helping local and growing businesses anchor their brand online and hold their ground.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="../services.html#web">Website Design</a>
+          <a href="../services.html#seo">SEO</a>
+          <a href="../services.html#social">Social Media</a>
+          <a href="../services.html#branding">Branding</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../work.html">Our Work</a>
+          <a href="../about.html">About</a>
+          <a href="index.html">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:hello@takeholdmedia.com">hello@takeholdmedia.com</a>
+          <a href="tel:3212741108">321.274.1108</a>
+          <a href="../contact.html">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TakeHold Media · DBA TMB Holdings · All rights reserved</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
