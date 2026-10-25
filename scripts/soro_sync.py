@@ -62,6 +62,7 @@ def page(a, body):
     mins = max(3, math.ceil(words / 220))
     head = re.sub(r"<title>[\s\S]*?</title>", f"<title>{E(a['title'])} | TakeHold Media</title>", head, 1)
     head = re.sub(r'<meta name="description" content="[^"]*"', f'<meta name="description" content="{E(a.get("excerpt"))}"', head, 1)
+    head = re.sub(r'\s*<link rel="canonical"[^>]*>', "", head)  # the template post's own canonical
     head = head.replace("</head>", f'  <link rel="canonical" href="{SITE}/blog/{a["slug"]}.html" />\n</head>', 1)
     head = re.sub(r"<span>SEO</span>(\s*</div>\s*<span class=\"article-cat\">)SEO", r"<span>Guides</span>\1Guides", head, 1)
     head = re.sub(r"<h1>[\s\S]*?</h1>", f"<h1>{E(a['title'])}</h1>", head, 1)
